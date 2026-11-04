@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gallery — nullinc.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,330 +17,327 @@
 }
 
 :root {
+    --background: #080808;
+    --panel: #111111;
+    --border: #242424;
+    --muted: #858585;
+    --white: #ffffff;
     --red: #ff3939;
     --orange: #ff8738;
 }
 
 body {
-    background: #080808;
-    color: #f5f5f5;
+    background: var(--background);
+    color: var(--white);
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
-}
-
-.gradient {
-    background: linear-gradient(100deg, var(--red), var(--orange));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* PASSWORD SCREEN */
-
-#loginScreen {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-}
-
-.login-box {
-    width: 100%;
-    max-width: 410px;
-    text-align: center;
-}
-
-.login-logo {
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: -2px;
-    margin-bottom: 65px;
-}
-
-.login-label {
-    color: #777;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-}
-
-.login-box h1 {
-    font-size: 42px;
-    letter-spacing: -2px;
-    margin-bottom: 15px;
-}
-
-.login-description {
-    color: #777;
-    font-size: 12px;
-    line-height: 1.8;
-    margin-bottom: 35px;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.password-input {
-    width: 100%;
-    padding: 16px;
-    background: #111;
-    border: 1px solid #303030;
-    border-radius: 6px;
-    color: white;
-    outline: none;
-    font-family: inherit;
-    font-size: 13px;
-    text-align: center;
-    letter-spacing: 2px;
-    transition: .3s;
-}
-
-.password-input:focus {
-    border-color: var(--red);
-}
-
-.password-input::placeholder {
-    color: #555;
-    letter-spacing: 1px;
-}
-
-.unlock-button {
-    padding: 16px;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    background: linear-gradient(100deg, var(--red), var(--orange));
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.unlock-button:hover {
-    opacity: .85;
-    transform: translateY(-2px);
-}
-
-.login-error {
-    min-height: 18px;
-    color: #ff5555;
-    font-size: 11px;
-    margin-top: 12px;
-}
-
-.login-footer {
-    color: #444;
-    font-size: 9px;
-    letter-spacing: 2px;
-    margin-top: 65px;
-}
-
-/* HIDE GALLERY UNTIL UNLOCKED */
-
-#galleryContent {
-    display: none;
 }
 
 /* NAVIGATION */
 
 nav {
-    padding: 30px 8%;
+    height: 80px;
+    padding: 0 8%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #202020;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
 }
 
 .logo {
     color: white;
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: -1.5px;
     text-decoration: none;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .logo span {
-    background: linear-gradient(100deg, var(--red), var(--orange));
+    background: linear-gradient(90deg, var(--red), var(--orange));
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 35px;
 }
 
 .nav-links a {
-    color: #888;
+    color: #999;
     text-decoration: none;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1.5px;
-    transition: .3s;
+    transition: 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--orange);
+    color: white;
 }
 
-/* HEADER */
+/* GENERAL */
+
+.container {
+    width: 84%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--red), var(--orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.eyebrow {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* LOGIN SCREEN */
+
+#loginScreen {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    background: linear-gradient(145deg, #151515, #0c0c0c);
+    border: 1px solid #292929;
+    padding: 50px 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+}
+
+.login-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    background: linear-gradient(135deg, var(--red), var(--orange));
+    color: white;
+}
+
+.login-box h1 {
+    font-size: 29px;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.login-box p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 16px;
+    background: #080808;
+    border: 1px solid #303030;
+    border-radius: 4px;
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.login-box input:focus {
+    border-color: var(--orange);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--red), var(--orange));
+    color: white;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-box button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+#errorMessage {
+    color: #ff5555;
+    font-size: 12px;
+    margin-top: 16px;
+    display: none;
+}
+
+/* GALLERY */
+
+#galleryContent {
+    display: none;
+    padding-bottom: 100px;
+}
 
 .hero {
-    padding: 95px 10% 55px;
-}
-
-.label {
-    color: #777;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
+    padding: 100px 0 65px;
+    border-bottom: 1px solid var(--border);
 }
 
 .hero h1 {
-    font-size: clamp(55px, 8vw, 95px);
-    letter-spacing: -6px;
+    font-size: clamp(45px, 7vw, 82px);
+    letter-spacing: -5px;
     line-height: 1;
-    font-weight: 700;
+    margin-bottom: 22px;
 }
 
-.intro {
-    color: #858585;
-    font-size: 15px;
+.hero p {
+    color: #888;
+    max-width: 520px;
     line-height: 1.8;
-    margin-top: 25px;
-    max-width: 550px;
+    font-size: 14px;
 }
 
-/* LINKS */
-
-.links-section {
-    padding: 20px 10% 110px;
-}
-
-.toolbar {
+.gallery-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin: 45px 0 30px;
 }
 
-.section-label {
+.gallery-count {
     color: #777;
-    font-size: 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
     font-weight: 700;
-    letter-spacing: 3px;
 }
 
-.search {
-    width: 100%;
-    max-width: 330px;
-    padding: 13px 16px;
+.search-box {
+    width: 280px;
+    max-width: 100%;
+    padding: 14px 17px;
     background: #111;
     border: 1px solid #292929;
-    border-radius: 6px;
+    border-radius: 4px;
     color: white;
     font-family: inherit;
     font-size: 12px;
     outline: none;
 }
 
-.search:focus {
-    border-color: var(--red);
+.search-box:focus {
+    border-color: var(--orange);
 }
 
-.search::placeholder {
-    color: #666;
-}
+/* LINK GRID */
 
-.link-grid {
+.links-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    gap: 18px;
 }
 
 .link-card {
-    position: relative;
-    min-height: 170px;
-    padding: 23px;
     background: linear-gradient(145deg, #151515, #0d0d0d);
     border: 1px solid #242424;
-    border-radius: 8px;
-    transition: .25s ease;
-    overflow: hidden;
+    border-radius: 5px;
+    padding: 28px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.25s;
 }
 
 .link-card:hover {
+    border-color: #6a3024;
     transform: translateY(-4px);
-    border-color: #4a2922;
 }
 
 .card-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
-.category {
+.card-number {
+    color: #555;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-subject {
     color: var(--orange);
     font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 .link-card h2 {
-    font-size: 17px;
-    font-weight: 600;
-    margin-bottom: 9px;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
 }
 
-.link-card p {
-    color: #858585;
+.card-description {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.card-notes {
+    color: #666;
     font-size: 11px;
-    line-height: 1.7;
-}
-
-.subject {
-    display: inline-block;
-    color: #aaa;
-    background: #202020;
-    padding: 6px 9px;
-    border-radius: 4px;
-    font-size: 9px;
-    margin-top: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
 }
 
 .card-actions {
     display: flex;
-    gap: 17px;
-    margin-top: 19px;
     align-items: center;
+    gap: 20px;
+    border-top: 1px solid #242424;
+    padding-top: 18px;
 }
 
 .card-actions a,
 .card-actions button {
-    color: #aaa;
+    color: white;
     font-family: inherit;
     font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
     text-decoration: none;
     background: none;
     border: none;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .card-actions a:hover,
@@ -347,79 +345,52 @@ nav {
     color: var(--orange);
 }
 
-.empty {
+.no-results {
     display: none;
-    padding: 55px 20px;
     text-align: center;
     color: #777;
+    padding: 70px 20px;
     font-size: 13px;
-    border: 1px dashed #292929;
-    border-radius: 8px;
 }
 
 /* NOTES MODAL */
 
-.modal-overlay {
+#notesModal {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 10;
-    background: rgba(0,0,0,.82);
-    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
 
-.modal-overlay.show {
-    display: flex;
-}
-
-.modal {
+.modal-box {
     width: 100%;
-    max-width: 520px;
-    background: #111;
-    border: 1px solid #303030;
-    border-radius: 10px;
+    max-width: 500px;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 6px;
     padding: 35px;
-    position: relative;
 }
 
-.modal-label {
-    color: var(--orange);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 17px;
-}
-
-.modal h2 {
-    font-size: 27px;
-    margin-bottom: 12px;
-}
-
-.modal-subject {
-    color: #999;
-    font-size: 11px;
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 25px;
 }
 
-.modal-notes {
-    color: #aaa;
-    font-size: 13px;
-    line-height: 2;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
+.modal-top h2 {
+    font-size: 21px;
 }
 
 .close-modal {
-    position: absolute;
-    top: 18px;
-    right: 20px;
+    color: #888;
     background: none;
     border: none;
-    color: #777;
-    font-size: 24px;
+    font-size: 25px;
     cursor: pointer;
 }
 
@@ -427,71 +398,104 @@ nav {
     color: white;
 }
 
+.modal-subject {
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+#modalNotes {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.9;
+    white-space: pre-wrap;
+}
+
 /* FOOTER */
 
 footer {
-    border-top: 1px solid #202020;
-    padding: 28px 8%;
+    border-top: 1px solid var(--border);
+    padding: 30px 8%;
     display: flex;
     justify-content: space-between;
-    color: #666;
+    align-items: center;
+    color: #555;
     font-size: 10px;
-    letter-spacing: 1.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* MOBILE */
+footer span:last-child {
+    color: #777;
+}
 
-@media(max-width: 850px) {
-    .link-grid {
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .links-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        width: 88%;
     }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
     nav {
-        padding: 25px 6%;
+        padding: 0 6%;
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 20px;
     }
 
     .nav-links {
-        gap: 13px;
+        gap: 15px;
     }
 
     .nav-links a {
         font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        width: 88%;
     }
 
     .hero {
-        padding: 75px 7% 45px;
-    }
-
-    .links-section {
-        padding: 20px 7% 80px;
+        padding: 75px 0 45px;
     }
 
     .hero h1 {
         letter-spacing: -3px;
     }
 
-    .toolbar {
-        align-items: flex-start;
+    .gallery-toolbar {
+        align-items: stretch;
         flex-direction: column;
     }
 
-    .search {
-        max-width: none;
+    .search-box {
+        width: 100%;
     }
 
-    .link-grid {
+    .links-grid {
         grid-template-columns: 1fr;
     }
 
-    .modal {
-        padding: 28px 23px;
+    .login-box {
+        padding: 40px 25px;
     }
 
     footer {
         padding: 25px 6%;
-        font-size: 8px;
+        gap: 15px;
+        flex-direction: column;
+        text-align: center;
     }
 }
 </style>
@@ -499,342 +503,335 @@ footer {
 
 <body>
 
+<!-- NAVIGATION -->
+
+<nav>
+    <a href="/real-files/real-home.html" class="logo">
+        null<span>inc.</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="/real-files/real-home.html">HOME</a>
+        <a href="/real-files/real-about.html">ABOUT</a>
+        <a href="/real-files/gallery.html" class="active">GALLERY</a>
+    </div>
+</nav>
+
 <!-- PASSWORD SCREEN -->
 
 <section id="loginScreen">
-
     <div class="login-box">
 
-        <div class="login-logo">
-            nullinc<span class="gradient">.</span>
-        </div>
+        <div class="login-icon">✦</div>
 
-        <div class="login-label">RESTRICTED ACCESS</div>
+        <div class="eyebrow">NULLINC. // RESTRICTED</div>
 
-        <h1>Welcome <span class="gradient">back.</span></h1>
+        <h1>Private <span class="gradient-text">access.</span></h1>
 
-        <p class="login-description">
-            This area is restricted.<br>
-            Enter your access password to continue.
+        <p>
+            This collection is password protected.
+            Enter the password below to continue.
         </p>
 
-        <form class="login-form" id="loginForm">
-
+        <form id="loginForm">
             <input
                 type="password"
                 id="passwordInput"
-                class="password-input"
-                placeholder="ENTER PASSWORD"
-                autocomplete="current-password"
+                placeholder="Enter password..."
+                autocomplete="off"
                 required
             >
 
-            <button type="submit" class="unlock-button">
-                UNLOCK ACCESS ↗
-            </button>
-
+            <button type="submit">UNLOCK GALLERY →</button>
         </form>
 
-        <div class="login-error" id="loginError"></div>
-
-        <div class="login-footer">
-            NULLINC. // AUTHORIZED ACCESS ONLY
+        <div id="errorMessage">
+            Incorrect password. Try again.
         </div>
 
     </div>
-
 </section>
 
-<!-- PROTECTED GALLERY -->
+<!-- GALLERY CONTENT -->
 
-<div id="galleryContent">
-
-    <nav>
-        <a href="/real-files/real-home.html" class="logo">
-            nullinc<span>.</span>
-        </a>
-
-        <div class="nav-links">
-            <a href="/real-files/real-home.html">HOME</a>
-            <a href="/real-files/real-about.html">ABOUT</a>
-            <a href="/real-files/real-gallery.html" class="active">GALLERY</a>
-        </div>
-    </nav>
+<main id="galleryContent">
 
     <section class="hero">
+        <div class="container">
 
-        <div class="label">NULLINC. // DIRECTORY</div>
+            <div class="eyebrow">NULLINC. // PRIVATE COLLECTION</div>
 
-        <h1>
-            The <span class="gradient">collection.</span>
-        </h1>
+            <h1>The <span class="gradient-text">collection.</span></h1>
 
-        <p class="intro">
-            A collection of destinations, resources, projects,
-            and places worth exploring.
-        </p>
+            <p>
+                A collection of links, references, projects, and
+                destinations. Everything in one place.
+            </p>
 
+        </div>
     </section>
 
-    <section class="links-section">
+    <section class="container">
 
-        <div class="toolbar">
+        <div class="gallery-toolbar">
 
-            <div class="section-label">
-                ALL LINKS // <span id="count">0</span> / 100
+            <div class="gallery-count" id="galleryCount">
+                00 ITEMS
             </div>
 
             <input
-                class="search"
-                id="search"
                 type="text"
-                placeholder="Search titles, subjects, notes..."
+                class="search-box"
+                id="searchInput"
+                placeholder="Search the collection..."
             >
 
         </div>
 
-        <div class="link-grid" id="linkGrid"></div>
+        <div class="links-grid" id="linksGrid"></div>
 
-        <div class="empty" id="empty">
-            No links found.
+        <div class="no-results" id="noResults">
+            No results found.
         </div>
 
     </section>
 
-    <!-- NOTES WINDOW -->
+</main>
 
-    <div class="modal-overlay" id="modalOverlay">
+<!-- NOTES MODAL -->
 
-        <div class="modal">
+<div id="notesModal">
+    <div class="modal-box">
 
-            <button class="close-modal" id="closeModal">&times;</button>
-
-            <div class="modal-label">NULLINC. // LINK NOTES</div>
-
-            <h2 id="modalTitle"></h2>
-
-            <div class="modal-subject" id="modalSubject"></div>
-
-            <div class="modal-notes" id="modalNotes"></div>
-
+        <div class="modal-top">
+            <h2 id="modalTitle">Notes</h2>
+            <button class="close-modal" id="closeModal">×</button>
         </div>
 
+        <div class="modal-subject" id="modalSubject"></div>
+
+        <div id="modalNotes"></div>
+
     </div>
-
-    <footer>
-        <span>NULLINC. © 2026</span>
-        <span>BUILT ON POSSIBILITY.</span>
-    </footer>
-
 </div>
+
+<!-- FOOTER -->
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
 
 <script>
 
-/* =====================================
-   PASSWORD SETTINGS
-===================================== */
+/* ==========================================
+   PASSWORD
+========================================== */
 
 const PASSWORD = "thegreatnull";
 
-const loginScreen = document.getElementById("loginScreen");
-const galleryContent = document.getElementById("galleryContent");
 const loginForm = document.getElementById("loginForm");
 const passwordInput = document.getElementById("passwordInput");
-const loginError = document.getElementById("loginError");
-
-function unlockGallery() {
-    loginScreen.style.display = "none";
-    galleryContent.style.display = "block";
-    renderLinks();
-}
+const loginScreen = document.getElementById("loginScreen");
+const galleryContent = document.getElementById("galleryContent");
+const errorMessage = document.getElementById("errorMessage");
 
 loginForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
     if (passwordInput.value === PASSWORD) {
-
-        sessionStorage.setItem("nullinc_gallery_unlocked", "true");
-
-        loginError.textContent = "";
-        unlockGallery();
-
+        loginScreen.style.display = "none";
+        galleryContent.style.display = "block";
+        renderLinks(links);
     } else {
-
-        loginError.textContent = "Incorrect password. Try again.";
+        errorMessage.style.display = "block";
         passwordInput.value = "";
         passwordInput.focus();
-
     }
 });
 
-/* CHECK EXISTING SESSION */
 
-if (sessionStorage.getItem("nullinc_gallery_unlocked") === "true") {
-    unlockGallery();
-}
+/* ==========================================
+   YOUR LINKS
 
-/* =====================================
-   LINK DIRECTORY
-===================================== */
+   Add links by copying an object below.
 
-/*
-Each link has five fields:
+   title       = Name of the link
+   url         = Website address
+   subject     = Category / subject
+   description = Short description
+   notes       = Extra notes
 
-title       = Link name
-url         = Destination URL
-subject     = Main topic
-description = Short summary
-notes       = Additional information
-
-Maximum: 100 links.
-*/
+   Maximum: 100 links.
+========================================== */
 
 const links = [
 
     {
         title: "Example Website",
         url: "https://example.com",
-        subject: "Technology",
-        description: "A description of this destination.",
-        notes: "Add your notes here.\n\nYou can use multiple lines."
+        subject: "Reference",
+        description: "An example destination for your collection.",
+        notes: "Replace this with your own notes about the website."
     },
 
     {
         title: "Another Destination",
-        url: "https://example.com",
+        url: "https://google.com",
         subject: "Research",
-        description: "Another place worth exploring.",
-        notes: "Additional information about this link."
+        description: "A second example link.",
+        notes: "You can put additional information here."
     },
 
     {
         title: "Your Project",
-        url: "https://example.com",
+        url: "https://github.com",
         subject: "Projects",
-        description: "A project or destination you want to save.",
-        notes: "Remember to add any important details here."
+        description: "A place to keep track of projects and resources.",
+        notes: "Add anything you want to remember about this link."
     }
 
 ];
 
-const grid = document.getElementById("linkGrid");
-const search = document.getElementById("search");
-const count = document.getElementById("count");
-const empty = document.getElementById("empty");
 
-const overlay = document.getElementById("modalOverlay");
-const modalTitle = document.getElementById("modalTitle");
-const modalSubject = document.getElementById("modalSubject");
-const modalNotes = document.getElementById("modalNotes");
+/* ==========================================
+   RENDER LINKS
+========================================== */
 
-/* =====================================
-   DISPLAY LINKS
-===================================== */
+const linksGrid = document.getElementById("linksGrid");
+const galleryCount = document.getElementById("galleryCount");
+const noResults = document.getElementById("noResults");
 
-function renderLinks(query = "") {
+function renderLinks(items) {
 
-    grid.innerHTML = "";
+    linksGrid.innerHTML = "";
 
-    const filtered = links
-        .slice(0, 100)
-        .filter(link => {
+    const limitedItems = items.slice(0, 100);
 
-            const text = [
-                link.title,
-                link.subject,
-                link.description,
-                link.notes
-            ].join(" ").toLowerCase();
+    galleryCount.textContent =
+        String(limitedItems.length).padStart(2, "0") + " ITEMS";
 
-            return text.includes(query.toLowerCase());
+    noResults.style.display =
+        limitedItems.length === 0 ? "block" : "none";
 
-        });
+    limitedItems.forEach(function(link, index) {
 
-    count.textContent = Math.min(links.length, 100);
-
-    filtered.forEach(link => {
-
-        const card = document.createElement("div");
+        const card = document.createElement("article");
         card.className = "link-card";
 
         const top = document.createElement("div");
         top.className = "card-top";
 
-        const category = document.createElement("span");
-        category.className = "category";
-        category.textContent = "LINK";
+        const number = document.createElement("span");
+        number.className = "card-number";
+        number.textContent = "#" + String(index + 1).padStart(3, "0");
 
-        const arrow = document.createElement("span");
-        arrow.className = "category";
-        arrow.textContent = "↗";
+        const subject = document.createElement("span");
+        subject.className = "card-subject";
+        subject.textContent = link.subject || "Uncategorized";
 
-        top.append(category, arrow);
+        top.appendChild(number);
+        top.appendChild(subject);
 
         const title = document.createElement("h2");
         title.textContent = link.title;
 
         const description = document.createElement("p");
-        description.textContent = link.description;
-
-        const subject = document.createElement("span");
-        subject.className = "subject";
-        subject.textContent = link.subject;
+        description.className = "card-description";
+        description.textContent = link.description || "";
 
         const actions = document.createElement("div");
         actions.className = "card-actions";
 
-        const visit = document.createElement("a");
-        visit.href = link.url;
-        visit.target = "_blank";
-        visit.rel = "noopener noreferrer";
-        visit.textContent = "OPEN LINK ↗";
+        const openLink = document.createElement("a");
+        openLink.href = link.url;
+        openLink.target = "_blank";
+        openLink.rel = "noopener noreferrer";
+        openLink.textContent = "OPEN LINK ↗";
 
-        const notes = document.createElement("button");
-        notes.textContent = "VIEW NOTES +";
+        const notesButton = document.createElement("button");
+        notesButton.textContent = "VIEW NOTES +";
 
-        notes.addEventListener("click", () => {
-
-            modalTitle.textContent = link.title;
-            modalSubject.textContent = "SUBJECT // " + link.subject;
-            modalNotes.textContent = link.notes || "No notes added.";
-
-            overlay.classList.add("show");
-
+        notesButton.addEventListener("click", function() {
+            openNotes(link);
         });
 
-        actions.append(visit, notes);
+        actions.appendChild(openLink);
+        actions.appendChild(notesButton);
 
-        card.append(top, title, description, subject, actions);
+        card.appendChild(top);
+        card.appendChild(title);
+        card.appendChild(description);
+        card.appendChild(actions);
 
-        grid.appendChild(card);
+        linksGrid.appendChild(card);
 
     });
 
-    empty.style.display = filtered.length === 0 ? "block" : "none";
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", function() {
+
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    const filteredLinks = links.filter(function(link) {
+
+        return (
+            (link.title || "").toLowerCase().includes(searchTerm) ||
+            (link.subject || "").toLowerCase().includes(searchTerm) ||
+            (link.description || "").toLowerCase().includes(searchTerm) ||
+            (link.notes || "").toLowerCase().includes(searchTerm)
+        );
+
+    });
+
+    renderLinks(filteredLinks);
+
+});
+
+
+/* ==========================================
+   NOTES MODAL
+========================================== */
+
+const notesModal = document.getElementById("notesModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalSubject = document.getElementById("modalSubject");
+const modalNotes = document.getElementById("modalNotes");
+const closeModal = document.getElementById("closeModal");
+
+function openNotes(link) {
+
+    modalTitle.textContent = link.title;
+    modalSubject.textContent = link.subject || "UNCATEGORIZED";
+    modalNotes.textContent = link.notes || "No notes have been added.";
+
+    notesModal.style.display = "flex";
 
 }
 
-/* SEARCH */
+function hideNotes() {
+    notesModal.style.display = "none";
+}
 
-search.addEventListener("input", () => {
-    renderLinks(search.value);
-});
+closeModal.addEventListener("click", hideNotes);
 
-/* NOTES WINDOW */
-
-document.getElementById("closeModal").addEventListener("click", () => {
-    overlay.classList.remove("show");
-});
-
-overlay.addEventListener("click", event => {
-    if (event.target === overlay) {
-        overlay.classList.remove("show");
+notesModal.addEventListener("click", function(event) {
+    if (event.target === notesModal) {
+        hideNotes();
     }
 });
 
-document.addEventListener("keydown", event => {
+document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-        overlay.classList.remove("show");
+        hideNotes();
     }
 });
 
