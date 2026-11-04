@@ -1,265 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Something Else — nullinc.</title>
-
+<title>About — nullinc.</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #fff;
-    color: #17243a;
-    font-family: 'Inter', sans-serif;
-}
-
-nav {
-    padding: 35px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    color: #17243a;
-    text-decoration: none;
-}
-
-.logo span {
-    color: #5585ef;
-}
-
-.nav-links {
-    display: flex;
-    gap: 38px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #667085;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: #5585ef;
-}
-
-/* HERO */
-
-.hero {
-    padding: 120px 12% 65px;
-}
-
-.label {
-    color: #8295b1;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    margin-bottom: 30px;
-}
-
-h1 {
-    font-size: clamp(55px, 8vw, 100px);
-    letter-spacing: -6px;
-    line-height: 1.05;
-    font-weight: 600;
-}
-
-.gradient {
-    background: linear-gradient(100deg, #4388ed, #6964ed, #9864df);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.intro {
-    max-width: 650px;
-    color: #8995a7;
-    font-size: 16px;
-    line-height: 1.9;
-    margin-top: 35px;
-}
-
-/* MESSAGE */
-
-.content {
-    padding: 55px 12% 120px;
-}
-
-.message {
-    max-width: 750px;
-    border-top: 1px solid #edf0f5;
-    padding-top: 40px;
-}
-
-.message p {
-    color: #77869b;
-    font-size: 15px;
-    line-height: 2.2;
-    margin-bottom: 23px;
-}
-
-.message .emphasis {
-    color: #17243a;
-    font-weight: 600;
-}
-
-.message .highlight {
-    background: linear-gradient(100deg, #4388ed, #9864df);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-}
-
-.signature {
-    margin-top: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #6589ed;
-    letter-spacing: 1px;
-}
-
-/* DISCLAIMER */
-
-.disclaimer {
-    margin-top: 65px;
-    padding: 25px 30px;
-    background: linear-gradient(120deg, #f4f8ff, #faf7ff);
-    border-radius: 9px;
-    max-width: 750px;
-}
-
-.disclaimer p {
-    font-size: 11px;
-    line-height: 1.8;
-    color: #8995a7;
-}
-
-footer {
-    border-top: 1px solid #edf0f5;
-    padding: 30px 7%;
-    display: flex;
-    justify-content: space-between;
-    color: #a0aabb;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-/* MOBILE */
-
-@media(max-width:700px) {
-    .hero, .content {
-        padding-left: 7%;
-        padding-right: 7%;
-    }
-
-    h1 {
-        letter-spacing: -3px;
-    }
-
-    .nav-links {
-        gap: 13px;
-    }
-
-    .nav-links a {
-        font-size: 10px;
-    }
-
-    footer {
-        font-size: 9px;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080808;--text:#f4f1ef;--muted:#a49a96;--line:#29201d;--red:#ff3434;--orange:#ff8a28}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif}
+a{color:inherit;text-decoration:none}
+nav{height:90px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}
+.logo{font-size:26px;font-weight:800;letter-spacing:-1.8px}
+.logo span,.gradient{background:linear-gradient(100deg,var(--red),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:38px}
+.nav-links a{font-size:11px;letter-spacing:1.5px;font-weight:600;color:#aaa19d;transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:#ff7040}
+.hero{padding:125px 12% 75px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-180px;top:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,65,35,.13),transparent 68%);pointer-events:none}
+.label{font-size:10px;letter-spacing:4px;color:#e66b45;font-weight:700;margin-bottom:32px}
+h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-weight:650;position:relative}
+.intro{max-width:650px;color:#a49a96;font-size:15px;line-height:2;margin-top:35px}
+.content{padding:55px 12% 110px}
+.message{max-width:800px;border-top:1px solid var(--line);padding-top:40px}
+.message p{color:#a49a96;font-size:14px;line-height:2.2;margin-bottom:25px}
+.message .emphasis{color:#f4f1ef;font-weight:600}
+.message .highlight{background:linear-gradient(100deg,#ff3434,#ff8a28);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.signature{margin-top:50px;font-size:13px;font-weight:700;color:#ff7040;letter-spacing:2px}
+.disclaimer{margin-top:65px;padding:27px 30px;background:linear-gradient(120deg,#1a0e0c,#110d0b);border:1px solid #38231d;max-width:800px}
+.disclaimer p{font-size:10px;line-height:2;color:#a58b80;letter-spacing:1px}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:30px 8%;display:flex;justify-content:space-between;color:#716966;font-size:10px;letter-spacing:1.5px}
+@media(max-width:700px){
+nav{padding:0 6%;height:75px}.nav-links{gap:15px}.nav-links a{font-size:9px;letter-spacing:.8px}
+.logo{font-size:23px}.hero,.content{padding-left:7%;padding-right:7%}
+h1{letter-spacing:-4px}footer{padding:25px 6%;font-size:8px}
 }
 </style>
 </head>
 
 <body>
-
 <nav>
-    <a href="/index.html" class="logo">nullinc<span>.</span></a>
-
+    <a href="/real-files/real-home.html" class="logo">nullinc<span>.</span></a>
     <div class="nav-links">
-        <a href="/about.html">ABOUT</a>
-        <a href="/services.html">SERVICES</a>
-        <a href="/join.html">JOIN</a>
+        <a href="/real-files/real-home.html">HOME</a>
+        <a href="/real-files/real-about.html" class="active">ABOUT</a>
+        <a href="/real-files/gallery.html">GALLERY</a>
     </div>
 </nav>
 
 <section class="hero">
-
     <div class="label">INTERNAL COMMUNICATION // CLASSIFIED</div>
-
-    <h1>
-        Well, this is<br>
-        <span class="gradient">awkward.</span>
-    </h1>
-
+    <h1>Well, this is<br><span class="gradient">awkward.</span></h1>
     <p class="intro">
-        You've made it this far. Perhaps it's time we told
-        you a little more about what nullinc. really is.
+        You've made it this far. Perhaps it's time we told you a little
+        more about what nullinc. really is.
     </p>
-
 </section>
 
 <section class="content">
-
     <div class="message">
-        
+        <p>Hehehehhe. You finally made it. Now it's time to really tell you about nullinc.</p>
+
         <p>
-            Hehehehhe. You finally made it.
-            Now it's time to really tell you about nullinc.
+            We are a <span class="emphasis">secret organization</span> with a rather
+            ambitious objective: to build an ideal nation where everyone has the
+            freedom to pursue whatever they want.
         </p>
 
         <p>
-            We are a <span class="emphasis">secret organization</span>
-            with a rather ambitious objective: to build an ideal
-            nation where everyone has the freedom to pursue
-            whatever they want.
+            And we take the word <span class="highlight">anything</span> quite seriously.
         </p>
 
         <p>
-            And we take the word <span class="highlight">anything</span>
-            quite seriously.
+            Want to create something? Go for it. Want to explore something completely
+            new? Be our guest. Want to pursue an ambition nobody else understands?
+            Even better.
         </p>
 
         <p>
-            Want to create something? Go for it.
-            Want to explore something completely new?
-            Be our guest. Want to pursue an ambition nobody
-            else understands? Even better.
+            We believe in freedom of thought, freedom of expression, creativity,
+            individuality, and the right to shape your own future.
         </p>
 
         <p>
-            We believe in freedom of thought, freedom of expression,
-            creativity, individuality, and the right to shape
-            your own future.
+            Once you become part of the syndicate, an entirely different world awaits.
+            A world filled with passion, temptation, intimacy, and unforgettable
+            encounters.
         </p>
 
         <p>
-            Once you become part of the syndicate, an entirely different world awaits. A world filled with passion, temptation, intimacy, and unforgettable encounters.
+            Nullinc. celebrates sexuality, sensuality, and the freedom to explore
+            your deepest desires. From passionate nights, lingering kisses, and
+            intimate embraces to soft skin, beautiful curves, and the allure of
+            thighs, we appreciate every aspect of romance and physical attraction.
+        </p>
 
-Nullinc. celebrates sexuality, sensuality, and the freedom to explore your deepest desires. From passionate nights, lingering kisses, and intimate embraces to soft skin, beautiful curves, and the allure of thighs, we appreciate every aspect of romance and physical attraction.
+        <p>
+            Explore your fantasies, embrace your sensual side, and discover
+            experiences you never thought possible. Every experience should be
+            built on mutual desire, personal freedom, and respect.
+        </p>
 
-Explore your fantasies, embrace your sensual side, and discover experiences you never thought possible.
+        <p>
+            No judgment. No unnecessary boundaries. Just passion, pleasure,
+            and possibility.
+        </p>
 
-No judgment. No unnecessary boundaries. Just passion, pleasure, and possibility.
-
-**The world is yours. Your desires await. Welcome to <span class="highlight">nullinc.</span>**
+        <p class="emphasis">
+            The world is yours. Your desires await. Welcome to
+            <span class="highlight">nullinc.</span>
         </p>
 
         <p class="emphasis">
@@ -267,31 +117,24 @@ No judgment. No unnecessary boundaries. Just passion, pleasure, and possibility.
             <span class="highlight">ANYTHING.</span>
         </p>
 
-        <p>
-            Welcome to the other side.
-        </p>
+        <p>Welcome to the other side.</p>
 
-        <div class="signature">
-            — null...
-        </div>
-
+        <div class="signature">— null...</div>
     </div>
 
     <div class="disclaimer">
         <p>
             NULLINC. // INTERNAL DOCUMENT<br>
             CLASSIFICATION: QUESTIONABLE<br>
-            STATUS: SEXY<br>
+            STATUS: HIGHLY UNUSUAL<br>
             AUTHORIZED ACCESS ONLY.
         </p>
     </div>
-
 </section>
 
 <footer>
     <span>NULLINC. © 2026</span>
     <span>BUILT ON POSSIBILITY.</span>
 </footer>
-
 </body>
 </html>
