@@ -97,6 +97,22 @@ h1 {
     padding: 70px 12% 120px;
 }
 
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #8995a7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
 .service {
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -147,11 +163,41 @@ h1 {
     letter-spacing: 1px;
 }
 
-.contact {
+/* FEATURED SECTION */
+
+.featured {
     margin: 0 12% 110px;
     padding: 65px;
     border-radius: 14px;
     background: linear-gradient(120deg, #f4f8ff, #f9f7ff);
+}
+
+.featured .label {
+    margin-bottom: 20px;
+}
+
+.featured h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: -2px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.featured p {
+    color: #8995a7;
+    font-size: 14px;
+    line-height: 2;
+    max-width: 650px;
+}
+
+/* CONTACT */
+
+.contact {
+    margin: 0 12% 110px;
+    padding: 65px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #edf0f5;
 }
 
 .contact h2 {
@@ -213,7 +259,7 @@ footer {
         font-size: 23px;
     }
 
-    .contact {
+    .featured, .contact {
         margin: 0 7% 70px;
         padding: 35px 25px;
     }
@@ -237,104 +283,169 @@ footer {
     <div class="nav-links">
         <a href="about.html">ABOUT</a>
         <a href="services.html" class="active">SERVICES</a>
-        <a href="mailto:hello@nullinc.com">CONTACT</a>
+        <a href="join.html">JOIN</a>
     </div>
 </nav>
 
 <section class="hero">
 
-    <div class="label">WHAT WE DO</div>
+    <div class="label">THE NULLINC. EXPERIENCE</div>
 
     <h1>
-        Ideas into<br>
-        <span class="gradient">reality.</span>
+        Beyond the<br>
+        <span class="gradient">ordinary.</span>
     </h1>
 
     <p class="intro">
-        From the first spark of an idea to the finished product,
-        we bring creativity, technology, and design together
-        to create meaningful experiences.
+        nullinc. is more than an organization. It's a community,
+        a philosophy, and a different way of looking at the world.
+        We bring together people who believe in freedom,
+        individuality, pleasure, and limitless possibility.
     </p>
 
 </section>
 
 <section class="services">
 
+    <div class="section-heading">
+        <div class="label">WHAT WE OFFER</div>
+        <h2>Explore what awaits.</h2>
+        <p>
+            An entirely different experience, built around
+            the things that make life worth living.
+        </p>
+    </div>
+
     <div class="service">
         <div class="number">01</div>
         <div>
-            <h2>Web Development</h2>
+            <h2>Freedom & Individuality</h2>
             <p>
-                Modern, responsive, and thoughtfully built websites.
-                We turn concepts into digital experiences that look
-                great, work seamlessly, and leave an impression.
+                We believe everyone should have the opportunity
+                to pursue their own ambitions, express themselves,
+                explore their interests, and define their own future.
+                Your life is yours to shape. Your identity is yours
+                to discover.
             </p>
-            <span class="tag">DIGITAL EXPERIENCES</span>
+            <span class="tag">YOUR LIFE. YOUR RULES.</span>
         </div>
     </div>
 
     <div class="service">
         <div class="number">02</div>
         <div>
-            <h2>Creative Direction</h2>
+            <h2>Social Experiences</h2>
             <p>
-                Developing concepts, visual identities, and creative
-                directions that give projects their own personality.
-                From the smallest details to the bigger picture.
+                Meet new people, build friendships, form connections,
+                and become part of a community of individuals who
+                share a similar outlook on life. There is always
+                someone new to meet and something new to experience.
             </p>
-            <span class="tag">IDEAS & IDENTITY</span>
+            <span class="tag">COMMUNITY & CONNECTION</span>
         </div>
     </div>
 
     <div class="service">
         <div class="number">03</div>
         <div>
-            <h2>Digital Design</h2>
+            <h2>Passion & Intimacy</h2>
             <p>
-                Clean interfaces, visual systems, and digital
-                aesthetics. We combine form and function to make
-                every interaction feel intentional.
+                We embrace the passionate side of life.
+                Romance, sexuality, sensuality, intimate encounters,
+                passionate kisses, physical attraction, and the
+                exploration of adult desires all have a place
+                in the nullinc. philosophy.
             </p>
-            <span class="tag">DESIGN & UI/UX</span>
+            <span class="tag">PASSION & PLEASURE</span>
         </div>
     </div>
 
     <div class="service">
         <div class="number">04</div>
         <div>
-            <h2>Software & Technology</h2>
+            <h2>Adventure & Experiences</h2>
             <p>
-                Exploring technology and building useful tools,
-                applications, and software experiences that
-                solve problems in interesting ways.
+                Life should be memorable. Discover new places,
+                try unfamiliar things, pursue exciting opportunities,
+                and make memories worth looking back on.
+                Ordinary is entirely optional.
             </p>
-            <span class="tag">DEVELOPMENT & INNOVATION</span>
+            <span class="tag">LIVE WITHOUT LIMITS</span>
         </div>
     </div>
 
     <div class="service">
         <div class="number">05</div>
         <div>
-            <h2>Experimental Projects</h2>
+            <h2>Creativity & Innovation</h2>
             <p>
-                Not everything needs to fit into a category.
-                We experiment with new concepts, creative technology,
-                and ideas that push beyond the ordinary.
+                Ideas deserve to become reality. We encourage
+                experimentation, original thinking, creative
+                projects, technology, and the pursuit of
+                possibilities that others might overlook.
             </p>
-            <span class="tag">EXPLORATION & EXPERIMENTATION</span>
+            <span class="tag">CREATE SOMETHING NEW</span>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="number">06</div>
+        <div>
+            <h2>Our Vision</h2>
+            <p>
+                Our greatest ambition is to help create an ideal
+                nation — a place where opportunity is accessible,
+                individuality is celebrated, and everyone has
+                the freedom to pursue the life they desire.
+            </p>
+            <span class="tag">A DIFFERENT FUTURE</span>
         </div>
     </div>
 
 </section>
 
-<section class="contact">
-    <h2>Have something in mind?</h2>
+<section class="featured">
+
+    <div class="label">THE NULLINC. PHILOSOPHY</div>
+
+    <h2>
+        Anything is possible.
+        <span class="gradient">ANYTHING.</span>
+    </h2>
+
     <p>
-        Have an idea, a project, or something worth creating?
-        We'd like to hear about it.
+        We don't believe in living someone else's idea of what
+        life should be. We believe in exploring, experiencing,
+        creating, connecting, and discovering what makes
+        existence meaningful.
+
+        <br><br>
+
+        Your ambitions. Your passions. Your experiences.
+        Your future.
+
+        <br><br>
+
+        That's what nullinc. is about.
     </p>
 
-    <a href="mailto:hello@nullinc.com">GET IN TOUCH ↗</a>
+</section>
+
+<section class="contact">
+
+    <h2>
+        Interested in<br>
+        <span class="gradient">something more?</span>
+    </h2>
+
+    <p>
+        There's a place for people who share our vision.
+        If you believe in what we're building, we'd like
+        to hear from you.
+    </p>
+
+    <a href="join.html">JOIN NULLINC. ↗</a>
+
 </section>
 
 <footer>
