@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — nullinc.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #17243a;
+}
+
+nav {
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #17243a;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #5585ef;
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #5585ef;
+}
+
+.hero {
+    padding: 120px 12% 100px;
+}
+
+.label {
+    color: #8295b1;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: clamp(55px, 8vw, 105px);
+    letter-spacing: -6px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.gradient {
+    background: linear-gradient(100deg, #4388ed, #6964ed, #9864df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro {
+    max-width: 650px;
+    color: #8995a7;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 35px;
+}
+
+.services {
+    padding: 70px 12% 120px;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    padding: 45px 0;
+    border-top: 1px solid #edf0f5;
+    gap: 25px;
+    transition: .3s;
+}
+
+.service:last-child {
+    border-bottom: 1px solid #edf0f5;
+}
+
+.service:hover {
+    padding-left: 12px;
+}
+
+.number {
+    color: #6589ed;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.service h2 {
+    font-size: 29px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #8995a7;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 600px;
+}
+
+.service .tag {
+    display: inline-block;
+    margin-top: 20px;
+    color: #6789dc;
+    background: #f2f6ff;
+    padding: 8px 13px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.contact {
+    margin: 0 12% 110px;
+    padding: 65px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #f4f8ff, #f9f7ff);
+}
+
+.contact h2 {
+    font-size: clamp(30px, 5vw, 50px);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: #8995a7;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.contact a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(100deg, #4388ed, #7964e8);
+    padding: 15px 25px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.contact a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #6685ed40;
+}
+
+footer {
+    border-top: 1px solid #edf0f5;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    color: #a0aabb;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@media(max-width:700px) {
+    .hero, .services {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .service {
+        grid-template-columns: 45px 1fr;
+        gap: 10px;
+    }
+
+    .service h2 {
+        font-size: 23px;
+    }
+
+    .contact {
+        margin: 0 7% 70px;
+        padding: 35px 25px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html" class="logo">nullinc<span>.</span></a>
+
+    <div class="nav-links">
+        <a href="about.html">ABOUT</a>
+        <a href="services.html" class="active">SERVICES</a>
+        <a href="mailto:hello@nullinc.com">CONTACT</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="label">WHAT WE DO</div>
+
+    <h1>
+        Ideas into<br>
+        <span class="gradient">reality.</span>
+    </h1>
+
+    <p class="intro">
+        From the first spark of an idea to the finished product,
+        we bring creativity, technology, and design together
+        to create meaningful experiences.
+    </p>
+
+</section>
+
+<section class="services">
+
+    <div class="service">
+        <div class="number">01</div>
+        <div>
+            <h2>Web Development</h2>
+            <p>
+                Modern, responsive, and thoughtfully built websites.
+                We turn concepts into digital experiences that look
+                great, work seamlessly, and leave an impression.
+            </p>
+            <span class="tag">DIGITAL EXPERIENCES</span>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="number">02</div>
+        <div>
+            <h2>Creative Direction</h2>
+            <p>
+                Developing concepts, visual identities, and creative
+                directions that give projects their own personality.
+                From the smallest details to the bigger picture.
+            </p>
+            <span class="tag">IDEAS & IDENTITY</span>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="number">03</div>
+        <div>
+            <h2>Digital Design</h2>
+            <p>
+                Clean interfaces, visual systems, and digital
+                aesthetics. We combine form and function to make
+                every interaction feel intentional.
+            </p>
+            <span class="tag">DESIGN & UI/UX</span>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="number">04</div>
+        <div>
+            <h2>Software & Technology</h2>
+            <p>
+                Exploring technology and building useful tools,
+                applications, and software experiences that
+                solve problems in interesting ways.
+            </p>
+            <span class="tag">DEVELOPMENT & INNOVATION</span>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="number">05</div>
+        <div>
+            <h2>Experimental Projects</h2>
+            <p>
+                Not everything needs to fit into a category.
+                We experiment with new concepts, creative technology,
+                and ideas that push beyond the ordinary.
+            </p>
+            <span class="tag">EXPLORATION & EXPERIMENTATION</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="contact">
+    <h2>Have something in mind?</h2>
+    <p>
+        Have an idea, a project, or something worth creating?
+        We'd like to hear about it.
+    </p>
+
+    <a href="mailto:hello@nullinc.com">GET IN TOUCH ↗</a>
+</section>
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
+
+</body>
+</html>
