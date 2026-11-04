@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — nullinc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080808;--text:#f4f1ef;--muted:#99908c;--line:#29201d;--red:#ff3434;--orange:#ff8a28}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif}
+a{color:inherit;text-decoration:none}
+nav{height:90px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}
+.logo{font-size:26px;font-weight:800;letter-spacing:-1.8px}
+.logo span,.gradient{background:linear-gradient(100deg,var(--red),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:38px}
+.nav-links a{font-size:11px;letter-spacing:1.5px;font-weight:600;color:#aaa19d;transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:#ff7040}
+
+.hero{padding:120px 12% 75px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:600px;height:600px;right:-170px;top:-200px;background:radial-gradient(circle,rgba(255,65,35,.14),transparent 68%);pointer-events:none}
+.label{font-size:10px;letter-spacing:4px;color:#e66b45;font-weight:700;margin-bottom:30px}
+h1{font-size:clamp(65px,9vw,110px);letter-spacing:-7px;line-height:1;font-weight:700}
+.intro{max-width:600px;color:#99908c;font-size:14px;line-height:2;margin-top:30px}
+
+.gallery-section{padding:35px 8% 120px}
+.gallery-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}
+.gallery-heading h2{font-size:17px;letter-spacing:-.5px}
+.gallery-heading span{font-size:10px;color:#817773;letter-spacing:2px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item{position:relative;min-height:310px;overflow:hidden;background:#130e0c;border:1px solid #30211d;cursor:pointer;transition:.35s}
+.item:hover{transform:translateY(-5px);border-color:#a4472d}
+.art{position:absolute;inset:0;overflow:hidden;transition:.5s}
+.item:hover .art{transform:scale(1.04)}
+.art:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92),transparent 75%)}
+
+/* ABSTRACT ARTWORK */
+.art-one{background:radial-gradient(ellipse at 50% 45%,#ff632d 0%,#9e201b 20%,#350e12 48%,#0b0909 75%)}
+.art-one:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,180,110,.65);border-radius:50%;top:35px;left:50%;transform:translateX(-50%);box-shadow:0 0 35px rgba(255,70,30,.3),inset 0 0 40px rgba(255,70,30,.2)}
+
+.art-two{background:linear-gradient(135deg,#180b0b,#601b16 45%,#f15a28)}
+.art-two:before{content:"";position:absolute;width:150%;height:150%;left:-25%;top:-25%;background:repeating-linear-gradient(135deg,transparent 0 18px,rgba(255,180,120,.12) 19px 20px);transform:rotate(-15deg)}
+
+.art-three{background:radial-gradient(circle at 70% 30%,#ff9b39,#c53b23 25%,#45110f 60%,#090909)}
+.art-three:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;border:25px solid rgba(255,160,90,.18);top:35px;left:calc(50% - 95px);box-shadow:0 0 60px rgba(255,90,35,.35)}
+
+.art-four{background:linear-gradient(155deg,#090909,#2c1110 48%,#a32b1d)}
+.art-four:before{content:"";position:absolute;inset:15% 20%;border:1px solid rgba(255,130,80,.4);transform:rotate(45deg);box-shadow:0 0 0 25px rgba(255,90,40,.04),0 0 0 50px rgba(255,90,40,.04)}
+
+.art-five{background:radial-gradient(ellipse at 35% 35%,#ff8a32,#a82c20 35%,#270d0d 70%,#080808)}
+.art-five:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:2px solid rgba(255,190,120,.3);top:-70px;right:-60px;box-shadow:0 0 0 18px rgba(255,140,70,.06),0 0 0 38px rgba(255,140,70,.05)}
+
+.art-six{background:linear-gradient(110deg,#100b0b,#4b1511,#f05b2b)}
+.art-six:before{content:"";position:absolute;width:150%;height:2px;background:rgba(255,190,140,.55);top:45%;left:-20%;transform:rotate(-35deg);box-shadow:0 18px 30px rgba(255,100,40,.4),0 -18px 30px rgba(255,100,40,.3)}
+
+.art-seven{background:radial-gradient(circle at center,#ff572e,#751a17 35%,#100909 75%)}
+.art-seven:before{content:"";position:absolute;inset:20% 25%;border:1px solid rgba(255,170,110,.5);border-radius:50%;transform:rotate(-35deg) scaleX(1.5);box-shadow:0 0 30px rgba(255,70,30,.25)}
+
+.art-eight{background:linear-gradient(135deg,#0a0909,#2b1010 40%,#a83721 75%,#f58b38)}
+.art-eight:before{content:"";position:absolute;width:250px;height:250px;left:50%;top:50%;transform:translate(-50%,-50%) rotate(45deg);border:1px solid rgba(255,180,120,.55);box-shadow:0 0 0 25px rgba(255,120,50,.05),0 0 0 50px rgba(255,120,50,.05)}
+
+.art-nine{background:radial-gradient(ellipse at 50% 100%,#ff6c2d,#8c2119 35%,#160b0b 75%)}
+.art-nine:before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:linear-gradient(140deg,rgba(255,190,110,.65),rgba(255,50,30,.05));top:25px;left:50%;transform:translateX(-50%);filter:blur(2px)}
+
+.item-info{position:absolute;z-index:2;bottom:25px;left:25px;right:25px}
+.item-info span{font-size:9px;letter-spacing:2px;color:#ff9568;font-weight:700}
+.item-info h3{font-size:19px;margin-top:9px;letter-spacing:-.5px}
+.item-info p{font-size:11px;color:#b4a39c;margin-top:7px;line-height:1.7}
+
+.gallery-note{margin-top:55px;padding:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;align-items:center}
+.gallery-note p{font-size:12px;line-height:1.9;color:#928783;max-width:520px}
+.gallery-note strong{font-size:12px;letter-spacing:2px;color:#ff7040;white-space:nowrap}
+
+footer{border-top:1px solid rgba(255,255,255,.07);padding:30px 8%;display:flex;justify-content:space-between;color:#716966;font-size:10px;letter-spacing:1.5px}
+
+@media(max-width:850px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+nav{padding:0 6%;height:75px}.nav-links{gap:15px}.nav-links a{font-size:9px;letter-spacing:.8px}
+.logo{font-size:23px}.hero{padding:100px 7% 60px}
+h1{letter-spacing:-4px}.gallery-section{padding:25px 6% 80px}
+.gallery{grid-template-columns:1fr}.item{min-height:290px}
+.gallery-note{align-items:flex-start;flex-direction:column}
+footer{padding:25px 6%;font-size:8px}
+}
+</style>
+</head>
+
+<body>
+<nav>
+    <a href="/real-files/real-home.html" class="logo">nullinc<span>.</span></a>
+    <div class="nav-links">
+        <a href="/real-files/real-home.html">HOME</a>
+        <a href="/real-files/real-about.html">ABOUT</a>
+        <a href="/real-files/gallery.html" class="active">GALLERY</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="label">NULLINC. // VISUAL ARCHIVE</div>
+    <h1>A glimpse<br>of <span class="gradient">possibility.</span></h1>
+    <p class="intro">
+        A collection of ideas, concepts, atmospheres, and visual experiments.
+        This is only a glimpse of the world we're imagining.
+    </p>
+</section>
+
+<section class="gallery-section">
+    <div class="gallery-heading">
+        <h2>Selected works & concepts</h2>
+        <span>COLLECTION 001 — 009</span>
+    </div>
+
+    <div class="gallery">
+        <div class="item">
+            <div class="art art-one"></div>
+            <div class="item-info">
+                <span>001 // ORIGINS</span>
+                <h3>The Beginning</h3>
+                <p>Every idea starts somewhere.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-two"></div>
+            <div class="item-info">
+                <span>002 // STRUCTURE</span>
+                <h3>Beyond the Lines</h3>
+                <p>Question the shape of the world.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-three"></div>
+            <div class="item-info">
+                <span>003 // ENERGY</span>
+                <h3>Uncontained</h3>
+                <p>Ambition without a ceiling.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-four"></div>
+            <div class="item-info">
+                <span>004 // PERSPECTIVE</span>
+                <h3>Another Angle</h3>
+                <p>There is always another way to see things.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-five"></div>
+            <div class="item-info">
+                <span>005 // EXPRESSION</span>
+                <h3>Raw Expression</h3>
+                <p>Individuality in its purest form.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-six"></div>
+            <div class="item-info">
+                <span>006 // MOVEMENT</span>
+                <h3>Forward</h3>
+                <p>Never settle for standing still.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-seven"></div>
+            <div class="item-info">
+                <span>007 // POSSIBILITY</span>
+                <h3>Infinite Potential</h3>
+                <p>Imagine what could exist.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-eight"></div>
+            <div class="item-info">
+                <span>008 // EXPERIMENT</span>
+                <h3>Unconventional</h3>
+                <p>Something outside the expected.</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="art art-nine"></div>
+            <div class="item-info">
+                <span>009 // THE FUTURE</span>
+                <h3>What's Next?</h3>
+                <p>The best ideas are still ahead.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-note">
+        <p>
+            This archive is a work in progress. New concepts, visuals,
+            and experiments will find their place here as the world of
+            nullinc. continues to develop.
+        </p>
+        <strong>MORE TO COME. ↗</strong>
+    </div>
+</section>
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
+</body>
+</html>
