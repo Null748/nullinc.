@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — nullinc.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #17243a;
+}
+
+nav {
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #17243a;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #5585ef;
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #5585ef;
+}
+
+.hero {
+    padding: 120px 12% 110px;
+}
+
+.label {
+    color: #8295b1;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: clamp(55px, 8vw, 105px);
+    letter-spacing: -6px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.gradient {
+    background: linear-gradient(100deg, #4388ed, #6964ed, #9864df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro {
+    max-width: 650px;
+    color: #8995a7;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 35px;
+}
+
+.divider {
+    margin: 0 12%;
+    height: 1px;
+    background: #edf0f5;
+}
+
+.content {
+    padding: 100px 12%;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8295b1;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.content h2 {
+    font-size: clamp(32px, 5vw, 55px);
+    letter-spacing: -2px;
+    line-height: 1.2;
+    max-width: 750px;
+    font-weight: 600;
+}
+
+.content p {
+    color: #8995a7;
+    line-height: 1.9;
+    font-size: 15px;
+    max-width: 650px;
+    margin-top: 25px;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.value {
+    padding: 35px 28px;
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.value:hover {
+    transform: translateY(-5px);
+    border-color: #c6d8ff;
+}
+
+.value .number {
+    font-size: 12px;
+    color: #6589ed;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.value h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.value p {
+    font-size: 13px;
+    margin: 0;
+}
+
+footer {
+    border-top: 1px solid #edf0f5;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    color: #a0aabb;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@media(max-width:700px) {
+    .hero, .content {
+        padding: 85px 7%;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html" class="logo">nullinc<span>.</span></a>
+
+    <div class="nav-links">
+        <a href="about.html" class="active">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="mailto:hello@nullinc.com">CONTACT</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="label">WHO WE ARE</div>
+
+    <h1>
+        More than<br>
+        <span class="gradient">an idea.</span>
+    </h1>
+
+    <p class="intro">
+        nullinc. is an independent creative company built around
+        imagination, technology, and the pursuit of better ideas.
+        We believe that great things begin with curiosity.
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="content">
+    <div class="section-label">OUR PHILOSOPHY</div>
+
+    <h2>
+        We believe in creating things that
+        <span class="gradient">mean something.</span>
+    </h2>
+
+    <p>
+        We aren't interested in doing things simply because
+        they've always been done that way. We explore new
+        possibilities, challenge expectations, and turn
+        interesting ideas into real experiences.
+        <br><br>
+        From digital experiences to creative projects,
+        everything begins with a simple question:
+        What if?
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="content">
+    <div class="section-label">WHAT DRIVES US</div>
+
+    <h2>Three things. <span class="gradient">One mindset.</span></h2>
+
+    <div class="values">
+
+        <div class="value">
+            <div class="number">01 / CREATIVITY</div>
+            <h3>Think differently.</h3>
+            <p>
+                Explore ideas without limiting what's possible.
+                Original thinking is where everything begins.
+            </p>
+        </div>
+
+        <div class="value">
+            <div class="number">02 / INNOVATION</div>
+            <h3>Keep evolving.</h3>
+            <p>
+                Experiment, improve, and find new ways
+                to turn concepts into reality.
+            </p>
+        </div>
+
+        <div class="value">
+            <div class="number">03 / EXECUTION</div>
+            <h3>Make it real.</h3>
+            <p>
+                Ideas are only the beginning.
+                We believe in bringing them to life.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
+
+</body>
+</html>
