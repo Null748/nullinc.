@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>nullinc.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    color: #111827;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+
+nav {
+    width: 100%;
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: appear 1s ease;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #17243a;
+}
+
+.logo span {
+    color: #5585ef;
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #397ceB;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 12%;
+    animation: appear 1.2s ease;
+}
+
+.small-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #8b9bb1;
+    margin-bottom: 35px;
+}
+
+h1 {
+    font-size: clamp(65px, 10vw, 135px);
+    font-weight: 600;
+    letter-spacing: -8px;
+    line-height: 1.05;
+}
+
+.we-are {
+    color: #17243a;
+}
+
+#typing {
+    background: linear-gradient(
+        100deg,
+        #4388ed,
+        #6964ed,
+        #8c62df
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cursor {
+    display: inline-block;
+    width: 5px;
+    height: 0.8em;
+    margin-left: 8px;
+    background: #6685ed;
+    animation: blink 0.8s infinite;
+    vertical-align: baseline;
+}
+
+.description {
+    margin-top: 35px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #8995a7;
+    font-weight: 400;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f2f6;
+    color: #a0aabb;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* ANIMATIONS */
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    nav {
+        padding: 25px 7%;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 0 7%;
+    }
+
+    h1 {
+        font-size: 65px;
+        letter-spacing: -4px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">nullinc<span>.</span></div>
+
+    <div class="nav-links">
+        <a href="#about">ABOUT</a>
+        <a href="mailto:hello@nullinc.com">CONTACT</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="small-label">
+        INDEPENDENT THINKING. INFINITE POSSIBILITIES.
+    </div>
+
+    <h1>
+        <div class="we-are">We are</div>
+        <div>
+            <span id="typing"></span><span class="cursor"></span>
+        </div>
+    </h1>
+
+    <p class="description">
+        We create, explore, and bring ideas to life.<br>
+        This is nullinc.
+    </p>
+
+</section>
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
+
+<script>
+
+const words = [
+    "Creators.",
+    "Innovators.",
+    "Artists.",
+    "Thinkers.",
+    "Developers.",
+    "Dreamers."
+];
+
+const typingElement = document.getElementById("typing");
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const currentWord = words[wordIndex];
+
+    if (!deleting) {
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1600);
+            return;
+        }
+
+    } else {
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+    }
+
+    setTimeout(typeEffect, deleting ? 45 : 100);
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
