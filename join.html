@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Join — nullinc.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #17243a;
+}
+
+nav {
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #17243a;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #5585ef;
+}
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #5585ef;
+}
+
+/* HERO */
+
+.hero {
+    padding: 100px 12% 65px;
+}
+
+.label {
+    color: #8295b1;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: clamp(55px, 8vw, 100px);
+    letter-spacing: -6px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.gradient {
+    background: linear-gradient(100deg, #4388ed, #6964ed, #9864df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro {
+    max-width: 620px;
+    color: #8995a7;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-top: 30px;
+}
+
+/* FORM */
+
+.join-section {
+    padding: 40px 12% 120px;
+}
+
+.form-container {
+    max-width: 750px;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.form-group {
+    margin-bottom: 27px;
+}
+
+label {
+    display: block;
+    color: #53647b;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 17px 18px;
+    border: 1px solid #e6ebf2;
+    border-radius: 7px;
+    background: #fff;
+    color: #17243a;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: .3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #7296ed;
+    box-shadow: 0 0 0 3px #7296ed15;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit {
+    border: none;
+    padding: 17px 30px;
+    border-radius: 6px;
+    background: linear-gradient(100deg, #4388ed, #7964e8);
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #6685ed40;
+}
+
+.note {
+    color: #a0aabb;
+    font-size: 11px;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+footer {
+    border-top: 1px solid #edf0f5;
+    padding: 30px 7%;
+    display: flex;
+    justify-content: space-between;
+    color: #a0aabb;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@media(max-width:700px) {
+    .hero, .join-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    h1 {
+        letter-spacing: -3px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html" class="logo">nullinc<span>.</span></a>
+
+    <div class="nav-links">
+        <a href="about.html">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="join.html" class="active">JOIN</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="label">BECOME PART OF NULLINC.</div>
+
+    <h1>
+        Be part of<br>
+        something <span class="gradient">bigger.</span>
+    </h1>
+
+    <p class="intro">
+        We believe in building something beyond ourselves.
+        A community of individuals who share a vision for
+        creativity, freedom, innovation, and possibility.
+        If you believe in that vision, we'd like to hear from you.
+    </p>
+
+</section>
+
+<section class="join-section">
+
+    <div class="form-container">
+
+        <div class="form-title">Tell us about yourself.</div>
+
+        <form id="joinForm">
+
+            <div class="form-group">
+                <label for="name">FULL NAME</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL ADDRESS</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="you@example.com"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="interest">AREA OF INTEREST</label>
+                <select id="interest" required>
+                    <option value="" disabled selected>Select an area</option>
+                    <option>Creative Development</option>
+                    <option>Technology</option>
+                    <option>Design</option>
+                    <option>Innovation</option>
+                    <option>Community & Vision</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">WHY DO YOU WANT TO JOIN?</label>
+                <textarea
+                    id="message"
+                    placeholder="Tell us a little about yourself, your ideas, and what you hope to contribute..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="submit">
+                SUBMIT APPLICATION ↗
+            </button>
+
+            <p class="note">
+                Your application will be sent directly to the nullinc. team.
+                We appreciate your interest.
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
+
+<script>
+
+document.getElementById("joinForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const interest = document.getElementById("interest").value;
+    const message = document.getElementById("message").value;
+
+    const subject = encodeURIComponent("nullinc. Membership Application");
+
+    const body = encodeURIComponent(
+`NEW NULLINC. APPLICATION
+
+Name: ${name}
+Email: ${email}
+Area of Interest: ${interest}
+
+Why they want to join:
+
+${message}
+`);
+
+    window.location.href =
+        `mailto:jason.rigged@gmail.com?subject=${subject}&body=${body}`;
+
+});
+
+</script>
+
+</body>
+</html>
