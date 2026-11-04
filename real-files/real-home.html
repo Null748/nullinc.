@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nullinc. — Beyond Ordinary</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080808;--panel:#111010;--text:#f4f1ef;--muted:#99908c;--line:#29201d;--red:#ff3434;--orange:#ff8a28}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+nav{height:90px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:5}
+.logo{font-size:26px;font-weight:800;letter-spacing:-1.8px}
+.logo span{background:linear-gradient(100deg,var(--red),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:38px}
+.nav-links a{font-size:11px;letter-spacing:1.5px;font-weight:600;color:#aaa19d;transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:#ff7040}
+.hero{min-height:690px;padding:150px 12% 120px;position:relative;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hero:before{content:"";position:absolute;width:650px;height:650px;right:-180px;top:-130px;background:radial-gradient(circle,rgba(255,55,30,.16),rgba(255,130,35,.06) 38%,transparent 70%);pointer-events:none}
+.eyebrow{font-size:10px;letter-spacing:5px;color:#a99a94;font-weight:600;margin-bottom:35px}
+h1{font-size:clamp(65px,10vw,125px);line-height:.98;letter-spacing:-8px;font-weight:700;max-width:1000px;position:relative}
+.gradient{background:linear-gradient(100deg,#ff3434 5%,#ff642e 55%,#ffad45);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.intro{font-size:15px;line-height:2;color:#a49b97;max-width:570px;margin-top:38px}
+.actions{display:flex;gap:15px;margin-top:42px;flex-wrap:wrap}
+.btn{padding:16px 25px;font-size:10px;letter-spacing:1.5px;font-weight:700;border:1px solid #5b3027;transition:.3s}
+.btn.primary{background:linear-gradient(100deg,#e52c2c,#ed702b);border:0;color:white}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.15)}
+.section{padding:100px 12%;border-top:1px solid rgba(255,255,255,.07)}
+.section-label{font-size:10px;letter-spacing:4px;color:#e66b45;font-weight:700;margin-bottom:25px}
+.section h2{font-size:clamp(35px,5vw,58px);letter-spacing:-3px;line-height:1.1;max-width:750px}
+.section-copy{color:#99908c;font-size:14px;line-height:2;max-width:650px;margin-top:25px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:55px}
+.card{background:linear-gradient(145deg,#171211,#0d0c0c);border:1px solid #2b201d;padding:32px;min-height:190px;transition:.3s}
+.card:hover{border-color:#9b422c;transform:translateY(-5px)}
+.card-number{font-size:10px;color:#e66b45;letter-spacing:2px;margin-bottom:35px}
+.card h3{font-size:19px;margin-bottom:12px}
+.card p{font-size:12px;line-height:1.9;color:#928783}
+.final-cta{margin:0 8% 100px;padding:75px 8%;background:radial-gradient(circle at 90% 20%,rgba(255,76,35,.18),transparent 45%),linear-gradient(120deg,#19100e,#100d0c);border:1px solid #38231d}
+.final-cta h2{font-size:clamp(35px,5vw,60px);letter-spacing:-3px}
+.final-cta p{color:#a99a94;font-size:13px;margin-top:18px;line-height:1.8}
+.final-cta .btn{display:inline-block;margin-top:30px}
+footer{padding:30px 8%;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#716966;font-size:10px;letter-spacing:1.5px}
+@media(max-width:700px){
+nav{padding:0 6%;height:75px}.nav-links{gap:15px}.nav-links a{font-size:9px;letter-spacing:.8px}
+.logo{font-size:23px}.hero{padding:120px 7% 100px;min-height:620px}
+h1{letter-spacing:-4px}.section{padding:75px 7%}.cards{grid-template-columns:1fr}
+.final-cta{margin:0 5% 70px;padding:45px 7%}footer{padding:25px 6%;font-size:8px}
+}
+</style>
+</head>
+
+<body>
+<nav>
+    <a href="/real-files/real-home.html" class="logo">nullinc<span>.</span></a>
+    <div class="nav-links">
+        <a href="/real-files/real-home.html" class="active">HOME</a>
+        <a href="/real-files/real-about.html">ABOUT</a>
+        <a href="/real-files/gallery.html">GALLERY</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="eyebrow">INDEPENDENT THINKING // UNLIMITED POSSIBILITY</div>
+    <h1>A different<br>kind of <span class="gradient">world.</span></h1>
+    <p class="intro">
+        Nullinc. is built around a simple idea: the future should belong
+        to the people bold enough to imagine it. A place for ambition,
+        individuality, creativity, and possibility.
+    </p>
+    <div class="actions">
+        <a href="/real-files/real-about.html" class="btn primary">DISCOVER NULLINC. ↗</a>
+        <a href="/real-files/gallery.html" class="btn">EXPLORE THE GALLERY</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-label">01 // THE IDEA</div>
+    <h2>What if the world could be <span class="gradient">different?</span></h2>
+    <p class="section-copy">
+        What if people were free to pursue their ambitions, explore their
+        interests, express themselves, and create without being held back
+        by unnecessary limitations? That's the possibility we're interested in.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-number">01 — FREEDOM</div>
+            <h3>Think independently.</h3>
+            <p>Question expectations. Form your own ideas. Decide what matters to you.</p>
+        </div>
+        <div class="card">
+            <div class="card-number">02 — AMBITION</div>
+            <h3>Imagine more.</h3>
+            <p>Big ideas deserve room to grow. Your future should never be limited by someone else's expectations.</p>
+        </div>
+        <div class="card">
+            <div class="card-number">03 — POSSIBILITY</div>
+            <h3>Create something new.</h3>
+            <p>Explore the unknown, experiment, and turn the things you imagine into something real.</p>
+        </div>
+    </div>
+</section>
+
+<section class="final-cta">
+    <div class="section-label">THE NEXT STEP</div>
+    <h2>There's more beyond<br><span class="gradient">the ordinary.</span></h2>
+    <p>Get to know the ideas, philosophy, and world behind nullinc.</p>
+    <a href="/real-files/real-about.html" class="btn primary">LEARN MORE ↗</a>
+</section>
+
+<footer>
+    <span>NULLINC. © 2026</span>
+    <span>BUILT ON POSSIBILITY.</span>
+</footer>
+</body>
+</html>
