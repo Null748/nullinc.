@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pictures — nullinc.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 35px 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    transition: 0.25s;
+}
+
+.logo span {
+    color: #ff593d;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+/* PAGE TITLE */
+
+.heading {
+    text-align: center;
+    margin: 65px 20px 45px;
+}
+
+.heading h1 {
+    font-size: clamp(35px, 6vw, 55px);
+    font-weight: 700;
+    letter-spacing: -2.5px;
+}
+
+.heading p {
+    color: #666;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 13px;
+    text-transform: uppercase;
+}
+
+/* PHOTO GRID */
+
+.gallery {
+    width: min(1150px, 90%);
+    margin: 0 auto 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #171717;
+    border: 1px solid #252525;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* HIDDEN PHOTO COVER */
+
+.cover {
+    position: absolute;
+    inset: 0;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.15s ease;
+}
+
+.cover-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 18px;
+}
+
+.cover span {
+    color: #777;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* REVEAL */
+
+.photo.revealed .cover {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #1c1c1c;
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 750px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 94%;
+    }
+
+    .heading {
+        margin-top: 55px;
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        width: 88%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="/real-files/real-home.html">
+        null<span>inc.</span>
+    </a>
+</header>
+
+<section class="heading">
+    <h1>Pictures</h1>
+    <p>Press and hold to reveal</p>
+</section>
+
+<main class="gallery" id="gallery"></main>
+
+<footer>
+    NULLINC. © 2026
+</footer>
+
+<script>
+
+/* ==================================
+   ADD YOUR PHOTOS HERE
+   ==================================
+
+   Put your images inside:
+   /real-files/pictures/
+
+   Then add them below.
+
+   Example:
+   {
+       src: "/real-files/pictures/photo1.jpg",
+       alt: "Photo 1"
+   }
+
+*/
+
+const photos = [
+
+    {
+        src: "/real-files/pictures/photo1.jpg",
+        alt: "Photo 1"
+    },
+
+    {
+        src: "/real-files/pictures/photo2.jpg",
+        alt: "Photo 2"
+    },
+
+    {
+        src: "/real-files/pictures/photo3.jpg",
+        alt: "Photo 3"
+    }
+
+];
+
+/* ==================================
+   GALLERY SYSTEM
+   ================================== */
+
+const gallery = document.getElementById("gallery");
+
+photos.forEach(photo => {
+
+    const card = document.createElement("div");
+    card.className = "photo";
+
+    const img = document.createElement("img");
+    img.src = photo.src;
+    img.alt = photo.alt;
+    img.draggable = false;
+
+    const cover = document.createElement("div");
+    cover.className = "cover";
+
+    cover.innerHTML = `
+        <div class="cover-icon">◉</div>
+        <span>HOLD TO REVEAL</span>
+    `;
+
+    card.appendChild(img);
+    card.appendChild(cover);
+
+    // Reveal while pressed
+    card.addEventListener("pointerdown", (e) => {
+        if (e.button !== 0 && e.pointerType === "mouse") return;
+        card.classList.add("revealed");
+    });
+
+    // Hide when released
+    const hide = () => {
+        card.classList.remove("revealed");
+    };
+
+    card.addEventListener("pointerup", hide);
+    card.addEventListener("pointerleave", hide);
+    card.addEventListener("pointercancel", hide);
+
+    // Keyboard accessibility
+    card.tabIndex = 0;
+
+    card.addEventListener("keydown", (e) => {
+        if (e.code === "Space" || e.code === "Enter") {
+            e.preventDefault();
+            card.classList.add("revealed");
+        }
+    });
+
+    card.addEventListener("keyup", hide);
+    card.addEventListener("blur", hide);
+
+    // Prevent image dragging and context menus
+    card.addEventListener("contextmenu", e => e.preventDefault());
+
+    gallery.appendChild(card);
+
+});
+
+</script>
+
+</body>
+</html>
