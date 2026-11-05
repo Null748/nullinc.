@@ -5,31 +5,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — nullinc.</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700;900&family=Bebas+Neue&family=Press+Start+2P&family=Space+Mono:wght@700&family=Anton&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#080808;--text:#f4f1ef;--muted:#a49a96;--line:#29201d;--red:#ff3434;--orange:#ff8a28}
-body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif}
+
+:root{
+    --bg:#080808;
+    --text:#f4f1ef;
+    --muted:#a49a96;
+    --line:#29201d;
+    --red:#ff3434;
+    --orange:#ff8a28;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
+}
+
 a{color:inherit;text-decoration:none}
-nav{height:90px;padding:0 8%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}
-.logo{font-size:26px;font-weight:800;letter-spacing:-1.8px}
-.logo span,.gradient{background:linear-gradient(100deg,var(--red),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+nav{
+    height:90px;
+    padding:0 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-1.8px;
+}
+
+.logo span,.gradient{
+    background:linear-gradient(100deg,var(--red),var(--orange));
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
 .nav-links{display:flex;gap:38px}
-.nav-links a{font-size:11px;letter-spacing:1.5px;font-weight:600;color:#aaa19d;transition:.25s}
+
+.nav-links a{
+    font-size:11px;
+    letter-spacing:1.5px;
+    font-weight:600;
+    color:#aaa19d;
+    transition:.25s;
+}
+
 .nav-links a:hover,.nav-links a.active{color:#ff7040}
 
-.hero{padding:125px 12% 75px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;right:-180px;top:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,65,35,.13),transparent 68%);pointer-events:none}
-.label{font-size:10px;letter-spacing:4px;color:#e66b45;font-weight:700;margin-bottom:32px}
-h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-weight:650;position:relative}
-.intro{max-width:650px;color:#a49a96;font-size:15px;line-height:2;margin-top:35px}
+/* HERO */
+
+.hero{
+    padding:125px 12% 75px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    right:-180px;
+    top:-160px;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,rgba(255,65,35,.13),transparent 68%);
+    pointer-events:none;
+}
+
+.label{
+    font-size:10px;
+    letter-spacing:4px;
+    color:#e66b45;
+    font-weight:700;
+    margin-bottom:32px;
+}
+
+h1{
+    font-size:clamp(60px,9vw,110px);
+    letter-spacing:-7px;
+    line-height:1.02;
+    font-weight:650;
+    position:relative;
+}
+
+.intro{
+    max-width:650px;
+    color:#a49a96;
+    font-size:15px;
+    line-height:2;
+    margin-top:35px;
+}
+
+/* MAIN CONTENT */
 
 .content{padding:55px 12% 110px}
-.message{max-width:800px;border-top:1px solid var(--line);padding-top:40px}
-.message p{color:#a49a96;font-size:14px;line-height:2.2;margin-bottom:25px}
-.message .emphasis{color:#f4f1ef;font-weight:600}
-.message .highlight{background:linear-gradient(100deg,#ff3434,#ff8a28);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+.message{
+    max-width:800px;
+    border-top:1px solid var(--line);
+    padding-top:40px;
+}
+
+.message p{
+    color:#a49a96;
+    font-size:14px;
+    line-height:2.2;
+    margin-bottom:25px;
+}
+
+.message .emphasis{
+    color:#f4f1ef;
+    font-weight:600;
+}
+
+.message .highlight{
+    background:linear-gradient(100deg,#ff3434,#ff8a28);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-weight:700;
+}
+
+/* FOUNDER SECTION */
 
 .founder{
     max-width:800px;
@@ -40,6 +146,7 @@ h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-wei
     position:relative;
     overflow:hidden;
 }
+
 .founder:after{
     content:"";
     position:absolute;
@@ -50,6 +157,7 @@ h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-wei
     background:radial-gradient(circle,rgba(255,75,40,.14),transparent 70%);
     pointer-events:none;
 }
+
 .founder-label{
     color:#e66b45;
     font-size:10px;
@@ -57,11 +165,15 @@ h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-wei
     font-weight:700;
     margin-bottom:25px;
 }
+
 .founder h2{
     font-size:clamp(42px,7vw,68px);
     letter-spacing:-4px;
     margin-bottom:25px;
+    position:relative;
+    z-index:2;
 }
+
 .founder p{
     color:#a49a96;
     font-size:14px;
@@ -69,6 +181,7 @@ h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-wei
     margin-bottom:22px;
     max-width:680px;
 }
+
 .founder .quote{
     color:#f4f1ef;
     font-weight:600;
@@ -76,6 +189,7 @@ h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-wei
     padding-left:20px;
     margin-top:35px;
 }
+
 .founder .codename{
     margin-top:35px;
     color:#ff7040;
@@ -84,22 +198,200 @@ h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-wei
     letter-spacing:3px;
 }
 
-.signature{margin-top:50px;font-size:13px;font-weight:700;color:#ff7040;letter-spacing:2px}
-.disclaimer{margin-top:65px;padding:27px 30px;background:linear-gradient(120deg,#1a0e0c,#110d0b);border:1px solid #38231d;max-width:800px}
-.disclaimer p{font-size:10px;line-height:2;color:#a58b80;letter-spacing:1px}
+/* NULL FOUR-SECOND ENTRANCE */
 
-footer{border-top:1px solid rgba(255,255,255,.07);padding:30px 8%;display:flex;justify-content:space-between;color:#716966;font-size:10px;letter-spacing:1.5px}
+.null-entrance{
+    display:inline-block;
+    position:relative;
+    isolation:isolate;
+    transform-origin:center;
+    white-space:nowrap;
+}
+
+.null-entrance::before,
+.null-entrance::after{
+    content:"Null.";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:0;
+    -webkit-text-fill-color:initial;
+}
+
+.null-entrance::before{
+    color:#ff3434;
+    text-shadow:0 0 20px #ff3434,0 0 60px #ff3434;
+    z-index:-1;
+}
+
+.null-entrance::after{
+    color:#00eaff;
+    text-shadow:0 0 20px #00eaff,0 0 60px #00eaff;
+    z-index:-2;
+}
+
+.null-entrance.playing{
+    animation:nullFontFlash 4s steps(1,end) forwards;
+}
+
+.null-entrance.playing::before{
+    animation:nullRedAura 4s ease-out forwards;
+}
+
+.null-entrance.playing::after{
+    animation:nullBlueAura 4s ease-out forwards;
+}
+
+@keyframes nullFontFlash{
+    0%{
+        font-family:Inter,sans-serif;
+        color:#ff7040;
+        -webkit-text-fill-color:#ff7040;
+        text-shadow:none;
+        transform:scale(1);
+        letter-spacing:-4px;
+    }
+
+    8%{
+        font-family:"Press Start 2P",monospace;
+        color:white;
+        -webkit-text-fill-color:white;
+        text-shadow:0 0 25px white,0 0 80px red;
+        transform:scale(1.15) skewX(-8deg);
+    }
+
+    18%{
+        font-family:"Bebas Neue",sans-serif;
+        color:#ff3434;
+        -webkit-text-fill-color:#ff3434;
+        text-shadow:0 0 35px red,0 0 100px orange;
+        transform:scale(.95) skewX(5deg);
+    }
+
+    30%{
+        font-family:"Orbitron",sans-serif;
+        color:white;
+        -webkit-text-fill-color:white;
+        text-shadow:0 0 25px white,0 0 70px #ff3434;
+        transform:scale(1.2);
+        letter-spacing:2px;
+    }
+
+    43%{
+        font-family:"Anton",sans-serif;
+        color:#ff8a28;
+        -webkit-text-fill-color:#ff8a28;
+        text-shadow:0 0 35px orange,0 0 90px red;
+        transform:scale(1.05) skewX(-5deg);
+    }
+
+    56%{
+        font-family:"Space Mono",monospace;
+        color:white;
+        -webkit-text-fill-color:white;
+        text-shadow:0 0 25px white,0 0 80px #a855ff;
+        transform:scale(1.18);
+        letter-spacing:-2px;
+    }
+
+    70%{
+        font-family:"Orbitron",sans-serif;
+        color:#ff3434;
+        -webkit-text-fill-color:#ff3434;
+        text-shadow:0 0 35px red,0 0 100px red;
+        transform:scale(.98);
+    }
+
+    82%{
+        font-family:"Bebas Neue",sans-serif;
+        color:white;
+        -webkit-text-fill-color:white;
+        text-shadow:0 0 30px white,0 0 90px orange;
+        transform:scale(1.1);
+    }
+
+    92%,100%{
+        font-family:Inter,sans-serif;
+        color:#ff7040;
+        -webkit-text-fill-color:#ff7040;
+        text-shadow:0 0 25px rgba(255,80,40,.8);
+        transform:scale(1);
+        letter-spacing:-4px;
+    }
+}
+
+@keyframes nullRedAura{
+    0%{opacity:0;transform:scale(.7)}
+    15%{opacity:1;transform:scale(1.5)}
+    45%{opacity:.8;transform:scale(1.2)}
+    75%{opacity:.5;transform:scale(1.4)}
+    100%{opacity:0;transform:scale(1.8)}
+}
+
+@keyframes nullBlueAura{
+    0%,10%{opacity:0;transform:scale(.8)}
+    25%{opacity:.9;transform:scale(1.6)}
+    55%{opacity:.6;transform:scale(1.3)}
+    100%{opacity:0;transform:scale(2)}
+}
+
+/* DISCLAIMER */
+
+.signature{
+    margin-top:50px;
+    font-size:13px;
+    font-weight:700;
+    color:#ff7040;
+    letter-spacing:2px;
+}
+
+.disclaimer{
+    margin-top:65px;
+    padding:27px 30px;
+    background:linear-gradient(120deg,#1a0e0c,#110d0b);
+    border:1px solid #38231d;
+    max-width:800px;
+}
+
+.disclaimer p{
+    font-size:10px;
+    line-height:2;
+    color:#a58b80;
+    letter-spacing:1px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.07);
+    padding:30px 8%;
+    display:flex;
+    justify-content:space-between;
+    color:#716966;
+    font-size:10px;
+    letter-spacing:1.5px;
+}
+
+/* MOBILE */
 
 @media(max-width:700px){
-nav{padding:0 6%;height:75px}
-.nav-links{gap:15px}
-.nav-links a{font-size:9px;letter-spacing:.8px}
-.logo{font-size:23px}
-.hero,.content{padding-left:7%;padding-right:7%}
-h1{letter-spacing:-4px}
-.founder{padding:35px 25px}
-.founder h2{letter-spacing:-2px}
-footer{padding:25px 6%;font-size:8px}
+    nav{padding:0 6%;height:75px}
+    .nav-links{gap:15px}
+    .nav-links a{font-size:9px;letter-spacing:.8px}
+    .logo{font-size:23px}
+    .hero,.content{padding-left:7%;padding-right:7%}
+    h1{letter-spacing:-4px}
+    .founder{padding:35px 25px}
+    .founder h2{letter-spacing:-2px}
+    footer{padding:25px 6%;font-size:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .null-entrance.playing,
+    .null-entrance.playing::before,
+    .null-entrance.playing::after{
+        animation:none;
+    }
 }
 </style>
 </head>
@@ -108,6 +400,7 @@ footer{padding:25px 6%;font-size:8px}
 
 <nav>
     <a href="/real-files/real-home.html" class="logo">null<span>inc.</span></a>
+
     <div class="nav-links">
         <a href="/real-files/real-home.html">HOME</a>
         <a href="/real-files/real-about.html" class="active">ABOUT</a>
@@ -117,7 +410,12 @@ footer{padding:25px 6%;font-size:8px}
 
 <section class="hero">
     <div class="label">INTERNAL COMMUNICATION // CLASSIFIED</div>
-    <h1>Well, this is<br><span class="gradient">awkward.</span></h1>
+
+    <h1>
+        Well, this is<br>
+        <span class="gradient">awkward.</span>
+    </h1>
+
     <p class="intro">
         You've made it this far. Perhaps it's time we told you a little
         more about what nullinc. really is.
@@ -125,7 +423,9 @@ footer{padding:25px 6%;font-size:8px}
 </section>
 
 <section class="content">
+
     <div class="message">
+
         <p>Hehehehhe. You finally made it. Now it's time to really tell you about nullinc.</p>
 
         <p>
@@ -186,14 +486,18 @@ footer{padding:25px 6%;font-size:8px}
         <p>Welcome to the other side.</p>
 
         <div class="signature">— null...</div>
+
     </div>
 
     <!-- ABOUT THE FOUNDER -->
 
     <section class="founder">
+
         <div class="founder-label">PERSONNEL FILE // FOUNDER</div>
 
-        <h2>Meet <span class="gradient">Null.</span></h2>
+        <h2>
+            Meet <span class="gradient null-entrance" id="nullEntrance">Null.</span>
+        </h2>
 
         <p>
             Every organization has an origin. Every idea has someone
@@ -233,6 +537,7 @@ footer{padding:25px 6%;font-size:8px}
         </p>
 
         <div class="codename">CODENAME: NULL</div>
+
     </section>
 
     <div class="disclaimer">
@@ -243,12 +548,37 @@ footer{padding:25px 6%;font-size:8px}
             AUTHORIZED ACCESS ONLY.
         </p>
     </div>
+
 </section>
 
 <footer>
     <span>NULLINC. © 2026</span>
     <span>BUILT ON POSSIBILITY.</span>
 </footer>
+
+<script>
+const nullEntrance = document.getElementById("nullEntrance");
+
+const nullObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !nullEntrance.dataset.played) {
+
+            nullEntrance.dataset.played = "true";
+            nullEntrance.classList.add("playing");
+
+            setTimeout(() => {
+                nullEntrance.classList.remove("playing");
+            }, 4000);
+
+            nullObserver.disconnect();
+        }
+    });
+}, {
+    threshold: 0.8
+});
+
+nullObserver.observe(nullEntrance);
+</script>
 
 </body>
 </html>
