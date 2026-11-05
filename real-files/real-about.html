@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,29 +18,94 @@ nav{height:90px;padding:0 8%;display:flex;align-items:center;justify-content:spa
 .nav-links{display:flex;gap:38px}
 .nav-links a{font-size:11px;letter-spacing:1.5px;font-weight:600;color:#aaa19d;transition:.25s}
 .nav-links a:hover,.nav-links a.active{color:#ff7040}
+
 .hero{padding:125px 12% 75px;position:relative;overflow:hidden}
 .hero:after{content:"";position:absolute;right:-180px;top:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,65,35,.13),transparent 68%);pointer-events:none}
 .label{font-size:10px;letter-spacing:4px;color:#e66b45;font-weight:700;margin-bottom:32px}
 h1{font-size:clamp(60px,9vw,110px);letter-spacing:-7px;line-height:1.02;font-weight:650;position:relative}
 .intro{max-width:650px;color:#a49a96;font-size:15px;line-height:2;margin-top:35px}
+
 .content{padding:55px 12% 110px}
 .message{max-width:800px;border-top:1px solid var(--line);padding-top:40px}
 .message p{color:#a49a96;font-size:14px;line-height:2.2;margin-bottom:25px}
 .message .emphasis{color:#f4f1ef;font-weight:600}
 .message .highlight{background:linear-gradient(100deg,#ff3434,#ff8a28);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+.founder{
+    max-width:800px;
+    margin-top:100px;
+    padding:45px 40px;
+    border:1px solid #38231d;
+    background:linear-gradient(135deg,#17100e,#0c0a09);
+    position:relative;
+    overflow:hidden;
+}
+.founder:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    right:-130px;
+    top:-150px;
+    background:radial-gradient(circle,rgba(255,75,40,.14),transparent 70%);
+    pointer-events:none;
+}
+.founder-label{
+    color:#e66b45;
+    font-size:10px;
+    letter-spacing:4px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+.founder h2{
+    font-size:clamp(42px,7vw,68px);
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+.founder p{
+    color:#a49a96;
+    font-size:14px;
+    line-height:2.2;
+    margin-bottom:22px;
+    max-width:680px;
+}
+.founder .quote{
+    color:#f4f1ef;
+    font-weight:600;
+    border-left:2px solid #ff7040;
+    padding-left:20px;
+    margin-top:35px;
+}
+.founder .codename{
+    margin-top:35px;
+    color:#ff7040;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
 .signature{margin-top:50px;font-size:13px;font-weight:700;color:#ff7040;letter-spacing:2px}
 .disclaimer{margin-top:65px;padding:27px 30px;background:linear-gradient(120deg,#1a0e0c,#110d0b);border:1px solid #38231d;max-width:800px}
 .disclaimer p{font-size:10px;line-height:2;color:#a58b80;letter-spacing:1px}
+
 footer{border-top:1px solid rgba(255,255,255,.07);padding:30px 8%;display:flex;justify-content:space-between;color:#716966;font-size:10px;letter-spacing:1.5px}
+
 @media(max-width:700px){
-nav{padding:0 6%;height:75px}.nav-links{gap:15px}.nav-links a{font-size:9px;letter-spacing:.8px}
-.logo{font-size:23px}.hero,.content{padding-left:7%;padding-right:7%}
-h1{letter-spacing:-4px}footer{padding:25px 6%;font-size:8px}
+nav{padding:0 6%;height:75px}
+.nav-links{gap:15px}
+.nav-links a{font-size:9px;letter-spacing:.8px}
+.logo{font-size:23px}
+.hero,.content{padding-left:7%;padding-right:7%}
+h1{letter-spacing:-4px}
+.founder{padding:35px 25px}
+.founder h2{letter-spacing:-2px}
+footer{padding:25px 6%;font-size:8px}
 }
 </style>
 </head>
 
 <body>
+
 <nav>
     <a href="/real-files/real-home.html" class="logo">null<span>inc.</span></a>
     <div class="nav-links">
@@ -122,6 +188,53 @@ h1{letter-spacing:-4px}footer{padding:25px 6%;font-size:8px}
         <div class="signature">— null...</div>
     </div>
 
+    <!-- ABOUT THE FOUNDER -->
+
+    <section class="founder">
+        <div class="founder-label">PERSONNEL FILE // FOUNDER</div>
+
+        <h2>Meet <span class="gradient">Null.</span></h2>
+
+        <p>
+            Every organization has an origin. Every idea has someone
+            behind it. Nullinc. is no exception.
+        </p>
+
+        <p>
+            Known only by the codename <span class="highlight">Null</span>,
+            the founder remains deliberately anonymous. Their real identity
+            is irrelevant to the organization's purpose.
+        </p>
+
+        <p>
+            Null is a creator, an observer, and an individual with an
+            unusually broad imagination. Curious by nature, they are
+            interested in technology, creativity, human behavior, and
+            the possibilities that exist beyond ordinary expectations.
+        </p>
+
+        <p>
+            They also believe that life should include more than ambition
+            and productivity. Romance, intimacy, attraction, sensuality,
+            and the freedom to explore personal desires are all part of
+            the human experience.
+        </p>
+
+        <p>
+            Null appreciates passion in its many forms: meaningful
+            connections, lingering kisses, physical affection, beauty,
+            and the excitement of discovering what makes people feel alive.
+            Above all, personal freedom should coexist with mutual respect.
+        </p>
+
+        <p class="quote">
+            "You don't need to know who I am. You only need to understand
+            what I am trying to build."
+        </p>
+
+        <div class="codename">CODENAME: NULL</div>
+    </section>
+
     <div class="disclaimer">
         <p>
             NULLINC. // INTERNAL DOCUMENT<br>
@@ -136,5 +249,6 @@ h1{letter-spacing:-4px}footer{padding:25px 6%;font-size:8px}
     <span>NULLINC. © 2026</span>
     <span>BUILT ON POSSIBILITY.</span>
 </footer>
+
 </body>
 </html>
