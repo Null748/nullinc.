@@ -668,28 +668,38 @@ loginForm.addEventListener("submit", function(event) {
 const links = [
 
     {
-        title: "Example Website",
-        url: "https://example.com",
-        subject: "Reference",
-        description: "An example destination for your collection.",
-        notes: "Replace this with your own notes about the website."
+        title: "Our Pinterest",
+        url: "https://www.pinterest.com/jasonrigged/",
+        subject: "Social",
+        description: "Our collection of hot girls, sexy pics, and many other sexual/cool photos.",
+        notes: "18+"
     },
 
     {
-        title: "Another Destination",
-        url: "https://google.com",
-        subject: "Research",
-        description: "A second example link.",
-        notes: "You can put additional information here."
+        title: "Our TikTok",
+        url: "https://tiktok.com/",
+        subject: "Social",
+        description: "COMING SOON",
+        notes: "18+"
     },
 
     {
-        title: "Your Project",
-        url: "https://github.com",
-        subject: "Projects",
-        description: "A place to keep track of projects and resources.",
-        notes: "Add anything you want to remember about this link."
+        title: "Perchance - Unrestricted AI Gen",
+        url: "https://perchance.org/ai-text-to-image-generator",
+        subject: "AI Gen",
+        description: "An Unrestricted AI image generator.",
+        notes: "It might make you change your account to 18+."
+    },
+
+    {
+        password: "ilovekaila",
+        title: "Our Skool Friends",
+        url: "https://perchance.org/ai-text-to-image-generator",
+        subject: "Personal",
+        description: "Sexy variations of our friends from skool",
+        notes: "DO NOT ACCESS. NULL ONLY!!!!!!"
     }
+    
 
 ];
 
@@ -748,6 +758,20 @@ function renderLinks(items) {
         openLink.target = "_blank";
         openLink.rel = "noopener noreferrer";
         openLink.textContent = "OPEN LINK ↗";
+
+        if (link.password) {
+            openLink.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                const enteredPassword = prompt("This link is password protected. Enter the password:");
+
+                if (enteredPassword === link.password) {
+                    window.open(link.url, "_blank", "noopener,noreferrer");
+                } else if (enteredPassword !== null) {
+                    alert("Incorrect password.");
+                }
+            });
+        }
 
         const notesButton = document.createElement("button");
         notesButton.textContent = "VIEW NOTES +";
