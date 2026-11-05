@@ -49,7 +49,7 @@ header {
     opacity: 0.7;
 }
 
-/* PAGE TITLE */
+/* TITLE */
 
 .heading {
     text-align: center;
@@ -64,13 +64,13 @@ header {
 
 .heading p {
     color: #666;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     margin-top: 13px;
     text-transform: uppercase;
 }
 
-/* PHOTO GRID */
+/* GALLERY */
 
 .gallery {
     width: min(1150px, 90%);
@@ -91,6 +91,7 @@ header {
     user-select: none;
     -webkit-user-select: none;
     touch-action: none;
+    isolation: isolate;
 }
 
 .photo img {
@@ -100,46 +101,126 @@ header {
     display: block;
     pointer-events: none;
     -webkit-user-drag: none;
+    transform: scale(1.04);
+    transition: transform 1s ease;
 }
 
-/* HIDDEN PHOTO COVER */
+/* COVER */
 
 .cover {
     position: absolute;
     inset: 0;
-    background: #111;
+    z-index: 2;
+    background: #101010;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 12px;
-    transition: opacity 0.15s ease;
+    gap: 15px;
+    transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
+.cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 65, 55, 0.12),
+        transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.photo.holding .cover::before {
+    opacity: 1;
+}
+
+/* CIRCULAR TIMER */
+
 .cover-icon {
-    width: 42px;
-    height: 42px;
-    border: 1px solid #444;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
+    border: 1px solid #444;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #888;
-    font-size: 18px;
+    position: relative;
 }
 
-.cover span {
+.cover-icon svg {
+    position: absolute;
+    inset: -3px;
+    width: 64px;
+    height: 64px;
+    transform: rotate(-90deg);
+}
+
+.progress-ring {
+    fill: none;
+    stroke: #ff593d;
+    stroke-width: 2;
+    stroke-dasharray: 176;
+    stroke-dashoffset: 176;
+    stroke-linecap: round;
+}
+
+.lock {
+    color: #888;
+    font-size: 21px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.photo.holding .lock {
+    color: #ff593d;
+    transform: scale(1.12);
+}
+
+.cover-text {
     color: #777;
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.photo.holding .cover-text {
+    color: #ff725c;
+}
+
+/* PROGRESS BAR */
+
+.hold-progress {
+    width: 75px;
+    height: 2px;
+    background: #292929;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.hold-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff3939, #ff8738);
 }
 
 /* REVEAL */
 
 .photo.revealed .cover {
     opacity: 0;
+    transform: scale(1.04);
     pointer-events: none;
+}
+
+.photo.revealed img {
+    transform: scale(1);
+}
+
+.photo.revealed {
+    border-color: #ff593d55;
+    box-shadow: 0 0 20px #ff39391a;
 }
 
 /* FOOTER */
@@ -153,15 +234,13 @@ footer {
     letter-spacing: 2px;
 }
 
+/* MOBILE */
+
 @media (max-width: 750px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         width: 94%;
-    }
-
-    .heading {
-        margin-top: 55px;
     }
 }
 
@@ -195,27 +274,21 @@ footer {
 
 <script>
 
-/* ==================================
+/* =========================================
    ADD YOUR PHOTOS HERE
-   ==================================
+   =========================================
 
-   Put your images inside:
+   Upload photos to:
    /real-files/pictures/
 
-   Then add them below.
-
-   Example:
-   {
-       src: "/real-files/pictures/photo1.jpg",
-       alt: "Photo 1"
-   }
+   Then add their paths below.
 
 */
 
 const photos = [
 
     {
-        src: "/real-files/pictures/putlinkhere",
+        src: "/real-files/pictures/photo1.jpg",
         alt: "Photo 1"
     },
 
@@ -231,11 +304,14 @@ const photos = [
 
 ];
 
-/* ==================================
+
+/* =========================================
    GALLERY SYSTEM
-   ================================== */
+   ========================================= */
 
 const gallery = document.getElementById("gallery");
+
+const HOLD_DURATION = 2000;
 
 photos.forEach(photo => {
 
@@ -251,45 +327,142 @@ photos.forEach(photo => {
     cover.className = "cover";
 
     cover.innerHTML = `
-        <div class="cover-icon">◉</div>
-        <span>HOLD TO REVEAL</span>
+        <div class="cover-icon">
+            <svg viewBox="0 0 64 64">
+                <circle
+                    class="progress-ring"
+                    cx="32"
+                    cy="32"
+                    r="28"
+                />
+            </svg>
+            <div class="lock">⌑</div>
+        </div>
+
+        <div class="cover-text">HOLD FOR 2 SECONDS</div>
+
+        <div class="hold-progress">
+            <div class="hold-progress-fill"></div>
+        </div>
     `;
 
     card.appendChild(img);
     card.appendChild(cover);
+    gallery.appendChild(card);
 
-    // Reveal while pressed
-    card.addEventListener("pointerdown", (e) => {
-        if (e.button !== 0 && e.pointerType === "mouse") return;
-        card.classList.add("revealed");
+    let holding = false;
+    let startTime = 0;
+    let animationFrame = null;
+
+    const ring = cover.querySelector(".progress-ring");
+    const text = cover.querySelector(".cover-text");
+
+    function updateProgress() {
+
+        if (!holding) return;
+
+        const elapsed = performance.now() - startTime;
+        const progress = Math.min(elapsed / HOLD_DURATION, 1);
+
+        ring.style.strokeDashoffset = 176 - (176 * progress);
+
+        if (progress >= 1) {
+
+            holding = false;
+
+            card.classList.remove("holding");
+            card.classList.add("revealed");
+
+            text.textContent = "RELEASE TO HIDE";
+
+            return;
+        }
+
+        animationFrame = requestAnimationFrame(updateProgress);
+    }
+
+    function startHold(e) {
+
+        if (card.classList.contains("revealed") || holding) return;
+
+        if (e.pointerType === "mouse" && e.button !== 0) return;
+
+        holding = true;
+        startTime = performance.now();
+
+        card.classList.add("holding");
+
+        animationFrame = requestAnimationFrame(updateProgress);
+    }
+
+    function cancelHold() {
+
+        if (!holding) return;
+
+        holding = false;
+
+        cancelAnimationFrame(animationFrame);
+
+        card.classList.remove("holding");
+
+        ring.style.strokeDashoffset = 176;
+    }
+
+    function hidePhoto() {
+
+        cancelHold();
+
+        card.classList.remove("revealed");
+        card.classList.remove("holding");
+
+        ring.style.strokeDashoffset = 176;
+        text.textContent = "HOLD FOR 2 SECONDS";
+    }
+
+    card.addEventListener("pointerdown", startHold);
+
+    card.addEventListener("pointerup", () => {
+
+        if (card.classList.contains("revealed")) {
+            hidePhoto();
+        } else {
+            cancelHold();
+        }
+
     });
 
-    // Hide when released
-    const hide = () => {
-        card.classList.remove("revealed");
-    };
+    card.addEventListener("pointerleave", hidePhoto);
+    card.addEventListener("pointercancel", hidePhoto);
 
-    card.addEventListener("pointerup", hide);
-    card.addEventListener("pointerleave", hide);
-    card.addEventListener("pointercancel", hide);
+    card.addEventListener("contextmenu", e => {
+        e.preventDefault();
+    });
 
-    // Keyboard accessibility
+    // Keyboard support
+
     card.tabIndex = 0;
 
-    card.addEventListener("keydown", (e) => {
-        if (e.code === "Space" || e.code === "Enter") {
+    card.addEventListener("keydown", e => {
+
+        if (e.code === "Space" && !e.repeat) {
             e.preventDefault();
-            card.classList.add("revealed");
+            startHold({
+                pointerType: "keyboard",
+                button: 0
+            });
         }
+
     });
 
-    card.addEventListener("keyup", hide);
-    card.addEventListener("blur", hide);
+    card.addEventListener("keyup", e => {
 
-    // Prevent image dragging and context menus
-    card.addEventListener("contextmenu", e => e.preventDefault());
+        if (e.code === "Space") {
+            hidePhoto();
+        }
 
-    gallery.appendChild(card);
+    });
+
+    card.addEventListener("blur", hidePhoto);
 
 });
 
