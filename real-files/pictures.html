@@ -339,7 +339,9 @@ photos.forEach(photo => {
     card.className = "photo";
 
     const img = document.createElement("img");
-    img.src = photo.src;
+    img.setAttribute("src", photo.src);
+img.onload = () => console.log("Loaded:", photo.alt);
+img.onerror = () => console.error("Failed:", photo.alt, photo.src);
     img.alt = photo.alt;
     img.draggable = false;
 
